@@ -1,0 +1,13 @@
+extends ../../layout
+
+block content
+  h1= title
+
+  if all_categories.length !== 0
+    ul 
+        each category in all_categories
+            li  
+                a(herf=category._URL) #{item.name}
+
+  else 
+    li There are no items to display.
