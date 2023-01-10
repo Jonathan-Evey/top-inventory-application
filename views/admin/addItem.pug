@@ -1,0 +1,11 @@
+extends ../layout
+
+
+block content
+  a(href='/admin') back to main
+
+  h1= title
+  p Welcome to #{title}
+  p testing from admin index
+  
+  include ../forms/addItem
