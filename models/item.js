@@ -10,7 +10,15 @@ const ItemSchema = new Schema({
 		minLength: 3,
 		maxLength: 100,
 	},
+	// water color, sketch, mix-media, print
+	printType: { type: String, required: true },
+	// is it original limited 1 / 1, original in a series ie. 2 / 11, or copys/prints
+	printInfo: { type: String, required: true },
+	original: { type: Boolean, required: true },
+	// if it is a series, tie to a id to show all of the items in that searies
+	seriesID: { type: String, require: false },
 	description: { type: String, required: true },
+	// greeting cards, wall art, posters.
 	category: {
 		type: Schema.Types.ObjectId,
 		ref: 'Category',
