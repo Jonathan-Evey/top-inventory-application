@@ -11,4 +11,8 @@ router.get('/', function (req, res, next) {
 
 router.get('/add-item', admin_controller.admin_create_item);
 
+router.get('/add-category', function (req, res, next) {
+	res.render('admin/addCategory', { title: 'Admin - Index' });
+});
+
 module.exports = router;
