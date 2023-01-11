@@ -1,13 +1,16 @@
 extends ../../layout
 
 block content
+  include ../../components/storeNav
+
   h1= title
 
   if all_items.length !== 0
     ul 
         each item in all_items
             li  
-                a(herf=item._URL) #{category.name}
+                a(href=`full-catalog${item._URL}`) 
+                    p #{item.name}
 
   else 
     li There are no items to display.

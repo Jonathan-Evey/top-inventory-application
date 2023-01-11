@@ -1,0 +1,14 @@
+mixin item(itemObj)
+
+    div(class="card item")
+        h4 #{itemObj.name} 
+        p #{itemObj.description}
+        
+        div 
+            div 
+                p #{itemObj.original ? "original" : "print"}
+                p #{itemObj.printType}
+                p #{itemObj.printInfo}
+            div 
+                p #{itemObj.num_in_stock}
+                p #{itemObj.price}

@@ -1,3 +1,5 @@
 node_modules/
 
+# file to populate the db
+pop.js 
 mongodb.js
