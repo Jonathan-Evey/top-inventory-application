@@ -13,3 +13,20 @@ exports.item_list = function (req, res, next) {
 			});
 		});
 };
+
+exports.item_details = function (req, res, next) {
+	let itemName = req.params.id.replaceAll('-', ' ');
+	console.log(itemName);
+	Item.findOne({ name: { $regex: itemName, $options: 'i' } }).exec(
+		function (err, response) {
+			if (err) {
+				return next(err);
+			}
+			console.log(response);
+			res.render('store/items/item', {
+				title: response.name,
+				itemObj: response,
+			});
+		}
+	);
+};
