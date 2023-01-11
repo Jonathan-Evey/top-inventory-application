@@ -3,19 +3,19 @@ extends ../layout
 block content
     form(method='POST' action='')
         div.form-group
-        label(for='item-name') Item Name:
-        input#item-name.form-control(type='text' placeholder='Item name' name='item-name' required='true' value=(undefined===item ? '' : item.name))
+            label(for='item-name') Item Name:
+            input#item-name.form-control(type='text' placeholder='Item name' name='item-name' required='true' value=(undefined===item ? '' : item.name))
         div.form-group
-        label(for='item-description') Item Description:
-        textarea#item-description.form-control(type='textarea' placeholder='Item description' name='item-description' required='true' value=(undefined===item ? '' : item.description))
+            label(for='item-description') Item Description:
+            textarea#item-description.form-control(type='textarea' placeholder='Item description' name='item-description' required='true' value=(undefined===item ? '' : item.description))
         div.form-group
-        label(for='print-type') Print Type:
-        input#print-type.form-control(type='text' placeholder='Water color, sketch, mix-media, print' name='print-type' required='true' value=(undefined===item ? '' : item.printType))
+            label(for='print-type') Print Type:
+            input#print-type.form-control(type='text' placeholder='Water color, sketch, mix-media, print' name='print-type' required='true' value=(undefined===item ? '' : item.printType))
         div.form-group
-        label(for="print-info") Print Info:
-        input#print-info.form-control(type='text' placeholder='e.g. "original - 1 / 11", "original - 1 / 1"' name='print-info' required='true' value=(undefined===item ? '' : item.printInfo))
+            label(for="print-info") Print Info:
+            input#print-info.form-control(type='text' placeholder='e.g. "original - 1 / 11", "original - 1 / 1"' name='print-info' required='true' value=(undefined===item ? '' : item.printInfo))
         div.form-group
-        label Category:
+          label Category:
             div
               for category in categories
                 div 
@@ -23,6 +23,11 @@ block content
                     label(for=`category-${category.name}`) #{category.name}
         
         div.form-group
+            label(for="price-info") Price:
+            input#price-info.form-control(type='number' placeholder='50' name='price-info' required='true' value=(undefined===item ? '' : item.price))
+        div.form-group
+            label(for="num-in-stock") How many in stock:
+            input#num-in-stock.form-control(type='number' placeholder='3' name='num-in-stock' required='true' value=(undefined===item ? '' : item.num_in_stock))
         p add series in here, but need to set those up
         button.btn.btn-primary(type='submit') Submit
     if errors
