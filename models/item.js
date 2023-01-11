@@ -24,13 +24,14 @@ const ItemSchema = new Schema({
 		ref: 'Category',
 		required: true,
 	},
+	creationDate: { type: String, require: false },
 	price: { type: Number, required: true },
 	num_in_stock: { type: Number, required: true },
 });
 
 // set url for each item
 ItemSchema.virtual('_URL').get(function () {
-	let formatedItem = this.name.replaceAll(' ', '').toLowerCase();
+	let formatedItem = this.name.replaceAll(' ', '-').toLowerCase();
 	return `/${formatedItem}`;
 });
 
