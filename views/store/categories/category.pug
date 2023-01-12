@@ -1,0 +1,16 @@
+extends ../../layout
+
+block content
+  include ../../components/storeNav
+
+  h1= title
+
+  if items.length !== 0
+    ul 
+        each item in items
+            li  
+                a(href=`/store${item._URL}`) 
+                    p #{item.name}
+
+  else 
+    li There are no categories to display.
