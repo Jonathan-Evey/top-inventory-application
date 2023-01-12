@@ -9,6 +9,8 @@ router.get('/', function (req, res, next) {
 	res.render('admin/index', { title: 'Admin - Index' });
 });
 
+router.get('/all-items', admin_controller.admin_item_list);
+
 router.get('/add-item', admin_controller.admin_create_item);
 
 router.get('/add-category', function (req, res, next) {

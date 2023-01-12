@@ -1,0 +1,17 @@
+extends ../layout
+
+
+block content
+  a(href='/admin') back to main
+
+  h1= title
+
+  if all_items.length !== 0
+    ul 
+        each item in all_items
+            li  
+                a(href=`admin/${item._id}`) 
+                    p #{item.name}
+
+  else 
+    li There are no items to display.

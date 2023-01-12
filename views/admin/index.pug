@@ -1,9 +1,23 @@
 extends ../layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p testing from admin index
-  a(href="admin/add-item") add new item
-  br
-  a(href="admin/add-category") add new category
+
+  if User
+    form 
+      div
+        label(for='user-name') User Name: 
+        input(type='text' name='user-name')
+      div 
+        label(for='password') Password: 
+        input(type='password' name='password')  
+        
+  else 
+    h1= title
+    p Welcome to #{title}
+    p testing from admin index
+
+    a(href="admin/all-items") show items
+    br
+    a(href="admin/add-item") add new item
+    br
+    a(href="admin/add-category") add new category
