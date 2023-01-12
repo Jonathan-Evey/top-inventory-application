@@ -15,7 +15,7 @@ const CategorySchema = new Schema({
 // set url for each category
 CategorySchema.virtual('_URL').get(function () {
 	let formatedCategory = this.name
-		.replaceAll(' ', '')
+		.replaceAll(' ', '-')
 		.toLowerCase();
 	return `/categories/${formatedCategory}`;
 });
