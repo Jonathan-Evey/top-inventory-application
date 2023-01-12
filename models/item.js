@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { DateTime } = require('luxon');
 
 const Schema = mongoose.Schema;
 
@@ -33,6 +34,16 @@ const ItemSchema = new Schema({
 ItemSchema.virtual('_URL').get(function () {
 	let formatedItem = this.name.replaceAll(' ', '-').toLowerCase();
 	return `/${formatedItem}`;
+});
+
+ItemSchema.virtual('creationDate_formatted').get(function () {
+	if (this.creationDate) {
+		return DateTime.fromJSDate(this.creationDate)
+			.setLocale('en-US')
+			.toFormat("yyyy'-'LL'-'dd");
+	} else {
+		return;
+	}
 });
 
 module.exports = mongoose.model('Item', ItemSchema);
