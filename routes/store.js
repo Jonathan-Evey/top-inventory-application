@@ -17,13 +17,13 @@ router.get('/', function (req, res, next) {
 // ------ index
 router.get('/categories', category_controller.category_list);
 
-module.exports = router;
+router.get('/categories/:id', category_controller.category_item_list);
 
 /// ITEM ROUTES ///
 
 // ------ index
 router.get('/full-catalog', items_controller.item_list);
 
-router.get('/full-catalog/:id', items_controller.item_details);
+router.get('/:id', items_controller.item_details);
 
 module.exports = router;
