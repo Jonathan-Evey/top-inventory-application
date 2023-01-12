@@ -1,5 +1,6 @@
 const Item = require('../models/item');
 
+// show all items
 exports.item_list = function (req, res, next) {
 	Item.find()
 		.sort([['name', 'ascending']])
@@ -14,6 +15,7 @@ exports.item_list = function (req, res, next) {
 		});
 };
 
+// display one item's details
 exports.item_details = function (req, res, next) {
 	let itemName = req.params.id.replaceAll('-', ' ');
 	console.log(itemName);
