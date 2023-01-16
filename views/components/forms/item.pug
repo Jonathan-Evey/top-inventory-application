@@ -4,7 +4,7 @@ form(method='POST' action='')
         input#item-name.form-control(type='text' placeholder='Item name' name='item-name' required='true' value=(undefined===item ? '' : item.name))
     div.form-group
         label(for='item-description') Item Description:
-        textarea#item-description.form-control(type='textarea' placeholder='Item description' name='item-description' required='true' value=(undefined===item ? '' : item.description))
+        textarea#item-description.form-control(type='textarea' placeholder='Item description' name='item-description' required='true') #{undefined===item ? '' : item.description}
     div.form-group
         label(for='print-type') Print Type:
         input#print-type.form-control(type='text' placeholder='Water color, sketch, mix-media, print' name='print-type' required='true' value=(undefined===item ? '' : item.printType))
@@ -21,7 +21,7 @@ form(method='POST' action='')
     
     div.form-group
         label(for="date-made") Item Completed On:
-        input#date-made.form-control(type='date' placeholder='dd/mm/yyyy' name='date-made' required='false' value=(undefined===item ? '' : item.creationDate))
+        input#date-made.form-control(type='date' placeholder='dd/mm/yyyy' name='date-made' required='false' value=(undefined===item ? '' : item.creationDate_formatted))
     div.form-group
         label(for="price-info") Price:
         input#price-info.form-control(type='number' placeholder='50' name='price-info' required='true' value=(undefined===item ? '' : item.price))
