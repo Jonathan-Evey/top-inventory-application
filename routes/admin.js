@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/all-items', admin_controller.admin_item_list);
+router.get('/all-items/:id', admin_controller.admin_update_item);
 
 router.get('/add-item', admin_controller.admin_create_item);
 
