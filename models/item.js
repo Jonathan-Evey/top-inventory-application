@@ -38,7 +38,7 @@ ItemSchema.virtual('_URL').get(function () {
 
 ItemSchema.virtual('creationDate_formatted').get(function () {
 	if (this.creationDate) {
-		return DateTime.fromJSDate(this.creationDate)
+		return DateTime.fromJSDate(new Date(this.creationDate))
 			.setLocale('en-US')
 			.toFormat("yyyy'-'LL'-'dd");
 	} else {
