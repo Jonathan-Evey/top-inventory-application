@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart",
-    "sass": "sass ./sass/main.scss ./public/stylesheets/style.css"
+    "sass": "sass ./sass/main.scss ./public/stylesheets/style.css",
+    "sasswatch": "sass --watch ./sass:public/stylesheets"
   },
   "dependencies": {
     "async": "^3.2.4",

@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.gallery {
+    &__main {
+        font-family: $font-family-accent;
+        & img:first-child {
+            max-height: 65vh;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

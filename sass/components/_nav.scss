@@ -1,0 +1,53 @@
+@use "../abstracts/" as *;
+@use "sass:color";
+
+.nav {
+    &__main,
+    &__store,
+    &__gallery {
+        & a {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            & p {
+                font-family: $font-family-base;
+                font-size: $font-size-600;
+                font-weight: $font-weight-bold;
+                text-transform: $nav-text-transform;
+            }
+            
+        }
+        &.at-home li:nth-child(1) {
+            & a {
+                color: black;
+            }
+        }
+    }
+    &__store {
+        display: flex;
+        justify-content: flex-end;
+        padding-inline-end: 1rem;
+    }
+    &__gallery {
+        & ul {
+            margin-inline: auto;
+        }
+    }
+}
+
+.nav-bar {
+    &__main {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-primary-200-95;
+        align-items: center;
+        &.container {
+            width: 100%
+        }
+        
+    }
+}

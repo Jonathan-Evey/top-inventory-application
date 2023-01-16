@@ -15,7 +15,9 @@ router.get('/all-items/:id', admin_controller.admin_update_item);
 router.get('/add-item', admin_controller.admin_create_item);
 
 router.get('/add-category', function (req, res, next) {
-	res.render('admin/addCategory', { title: 'Admin - Index' });
+	res.render('admin/addCategory', {
+		title: 'Admin - Index',
+	});
 });
 
 module.exports = router;
