@@ -73,13 +73,11 @@ exports.admin_update_item = function (req, res, next) {
 				return next(err);
 			}
 			for (const category in results.categories) {
-				for (const itemCategory in results.item.category) {
-					if (
-						category._id.toString() ===
-						itemCategory._id.toString()
-					) {
-						category.checked = 'true';
-					}
+				if (
+					results.categories[category]._id.toString() ===
+					results.item.category._id.toString()
+				) {
+					results.categories[category].checked = 'true';
 				}
 			}
 			res.render('admin/addItem', {
