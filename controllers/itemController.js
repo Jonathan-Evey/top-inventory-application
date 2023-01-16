@@ -11,6 +11,7 @@ exports.item_list = function (req, res, next) {
 			res.render('store/items/index', {
 				title: 'All Items',
 				all_items: response,
+				at_page: 'store',
 			});
 		});
 };
@@ -28,6 +29,7 @@ exports.item_details = function (req, res, next) {
 			res.render('store/items/item', {
 				title: response.name,
 				itemObj: response,
+				at_page: 'store',
 			});
 		}
 	);

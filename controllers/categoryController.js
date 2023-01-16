@@ -13,6 +13,7 @@ exports.category_list = function (req, res, next) {
 			res.render('store/categories/index', {
 				title: 'Categories',
 				all_categories: response,
+				at_page: 'store',
 			});
 		});
 };
@@ -49,6 +50,7 @@ exports.category_item_list = function (req, res, next) {
 			res.render('store/categories/category', {
 				title: results[0].category.name,
 				items: results,
+				at_page: 'store',
 			});
 		}
 	);
