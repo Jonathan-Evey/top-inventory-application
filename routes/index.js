@@ -8,15 +8,32 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/gallery', function (req, res, next) {
-	res.render('gallery/index', { title: 'Gallery' });
+	res.render('gallery/index', {
+		title: 'Gallery',
+		at_page: 'gallery',
+		sub_page: 'all',
+	});
+});
+router.get('/gallery/all', function (req, res, next) {
+	res.render('gallery/index', {
+		title: 'Gallery',
+		at_page: 'gallery',
+		sub_page: 'all',
+	});
 });
 
 router.get('/about', function (req, res, next) {
-	res.render('about/index', { title: 'About me' });
+	res.render('about/index', {
+		title: 'About me',
+		at_page: 'about',
+	});
 });
 
 router.get('/contact', function (req, res, next) {
-	res.render('contact/index', { title: 'Contact' });
+	res.render('contact/index', {
+		title: 'Contact',
+		at_page: 'contact',
+	});
 });
 
 module.exports = router;
