@@ -14,5 +14,21 @@
   &__heading {
     @include heading($card-heading-font-size, $card-heading-color-default)
   }
-}
 
+  &__item-preview {
+    position: relative;
+    padding: 1rem;
+    background-color: $color-primary-200;
+
+
+    & p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      font-size: $card-preview-title-font-size;
+      background-color: $color-primary-200-95;
+    }
+  }
+}

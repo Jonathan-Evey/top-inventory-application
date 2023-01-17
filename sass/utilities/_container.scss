@@ -19,3 +19,10 @@
 .container[data-type="full-bleed"] {
   --max-width: 100%;
 }
+
+.container__card-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-inline: 2.5rem;
+}

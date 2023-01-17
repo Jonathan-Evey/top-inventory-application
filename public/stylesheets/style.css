@@ -145,9 +145,23 @@ li {
   color: var(--primary-100);
   font-family: "Alegreya SC", serif;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   font-weight: 700;
   line-height: 1;
+}
+.card__item-preview {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--primary-200);
+}
+.card__item-preview p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  font-size: 2rem;
+  background-color: rgba(232, 225, 217, 0.95);
 }
 
 .heading-1 {
@@ -155,7 +169,7 @@ li {
   color: var(--accent-400);
   font-family: "Alegreya SC", serif;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   font-weight: 700;
   line-height: 1;
 }
@@ -165,7 +179,7 @@ li {
   color: var(--accent-400);
   font-family: "Alegreya SC", serif;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   font-weight: 700;
   line-height: 1;
 }
@@ -175,14 +189,31 @@ li {
   color: var(--primary-400);
   font-family: "Alegreya SC", serif;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   font-weight: 700;
   line-height: 1;
 }
 
 .nav__main a, .nav__store a, .nav__gallery a {
+  position: relative;
   display: inline-block;
-  padding: 0.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
+  text-decoration: none;
+}
+.nav__main a::before, .nav__store a::before, .nav__gallery a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-500);
+  height: 4px;
+  bottom: 0;
+  left: 0.25rem;
+  right: 0.25rem;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: all ease-in-out 250ms;
+}
+.nav__main a:is(:hover, :focus):not(.current)::before, .nav__store a:is(:hover, :focus):not(.current)::before, .nav__gallery a:is(:hover, :focus):not(.current)::before {
+  transform: scaleX(1);
 }
 .nav__main a p, .nav__store a p, .nav__gallery a p {
   font-family: "Source Sans Pro", sans-serif;
@@ -190,8 +221,17 @@ li {
   font-weight: 700;
   text-transform: uppercase;
 }
-.nav__main.at-home li:nth-child(1) a, .nav__store.at-home li:nth-child(1) a, .nav__gallery.at-home li:nth-child(1) a {
-  color: black;
+.nav__main a.current, .nav__store a.current, .nav__gallery a.current {
+  color: var(--accent-500);
+}
+.nav__main a.current::after, .nav__store a.current::after, .nav__gallery a.current::after {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-500);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .nav__store {
   display: flex;
@@ -212,44 +252,35 @@ li {
   justify-content: space-between;
   background-color: rgba(232, 225, 217, 0.95);
   align-items: center;
+  z-index: 50;
 }
 .nav-bar__main.container {
   width: 100%;
 }
 
-.hero__main {
-  font-family: "Alegreya SC", serif;
-}
-.hero__main img:first-child {
+main img:first-child {
   max-height: 65vh;
   width: 100%;
   object-fit: cover;
 }
-.hero__main h1 {
-  font-size: var(--fs-900);
-  font-weight: 700;
+
+.main__hero {
+  font-family: "Alegreya SC", serif;
 }
-.hero__main h4 {
-  font-size: var(--fs-800);
-  font-weight: 700;
-}
-.hero__main p {
+.main__hero p {
   font-size: var(--fs-600);
 }
-.hero__main img:not(:first-child) {
+.main__hero img:not(:first-child) {
   max-width: 30vw;
   float: right;
   display: block;
   margin: 0.5rem;
 }
-
-.gallery__main {
+.main__gallery {
   font-family: "Alegreya SC", serif;
 }
-.gallery__main img:first-child {
-  max-height: 65vh;
-  width: 100%;
-  object-fit: cover;
+.main__gallery h1, .main__gallery section {
+  padding-block-end: clamp(3rem, 10vh, 4rem);
 }
 
 .even-columns {
@@ -1058,6 +1089,13 @@ li {
 
 .container[data-type=full-bleed] {
   --max-width: 100%;
+}
+
+.container__card-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-inline: 2.5rem;
 }
 
 .fw-regular {

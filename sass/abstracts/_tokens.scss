@@ -7,7 +7,7 @@ $color-background-default: $color-primary-100;
 $color-text-interactive-default: $color-accent-400;
 $color-text-interactive-hover: $color-accent-500;
 
-$letter-spacing-loose: 0.16em;
+$letter-spacing-loose: 0.12em;
 
 // border-radius
 $border-radius-1: $size-2;
@@ -82,3 +82,5 @@ $card-heading-color-default: $card-color-default;
 $card-heading-font-size: $font-size-600;
 $card-border-radius: $border-radius-2;
 $card-box-shadow: $box-shadow-1;
+
+$card-preview-title-font-size: $size-8;

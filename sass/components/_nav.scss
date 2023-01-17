@@ -6,8 +6,29 @@
     &__store,
     &__gallery {
         & a {
+            position: relative;
             display: inline-block;
-            padding: 0.5rem 1.5rem;
+            padding: 1.5rem 1.5rem;
+            text-decoration: none;
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: $link-color-hover;
+                height: 4px;
+                bottom: 0;
+                left: 0.25rem;
+                right: 0.25rem;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: all ease-in-out 250ms;
+            }
+
+            &:is(:hover, :focus):not(.current) {
+                &::before {   
+                    transform: scaleX(1);
+                }
+            }
+
             & p {
                 font-family: $font-family-base;
                 font-size: $font-size-600;
@@ -16,9 +37,16 @@
             }
             
         }
-        &.at-home li:nth-child(1) {
-            & a {
-                color: black;
+        & a.current {
+            color: $link-color-hover;
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: $link-color-hover;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                right: 0;
             }
         }
     }
@@ -45,6 +73,7 @@
         justify-content: space-between;
         background-color: $color-primary-200-95;
         align-items: center;
+        z-index: 50;
         &.container {
             width: 100%
         }

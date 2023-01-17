@@ -1,16 +1,16 @@
-ul(class=`nav__main flex-group${(undefined===at_page ? "" : ` at-${at_page}`)}`)
-    li 
-        a(href="/") 
+ul(class='nav__main flex-group')
+    li
+        a(href="/", class=`${(at_page === 'home' ? 'current' : '')}`) 
             p Home
-    li 
-        a(href="/gallery") 
+    li
+        a(href="/gallery", class=`${(at_page === "gallery" ? "current" : "")}`) 
             p Gallery
     li
-        a(href="/about") 
+        a(href="/about", class=`${(at_page === "store" ? "current" : "")}`) 
             p About
-    li  
-        a(href="/contact") 
+    li
+        a(href="/contact", class=`${(at_page === "store" ? "current" : "")}`) 
             p Contact
-    li 
-        a(href='/store') 
+    li
+        a(href='/store', class=`${(at_page === "store" ? "current" : "")}`) 
             p Store
