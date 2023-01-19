@@ -11,14 +11,6 @@ router.get('/gallery', function (req, res, next) {
 	res.render('gallery/index', {
 		title: 'Gallery',
 		at_page: 'gallery',
-		sub_page: 'all',
-	});
-});
-router.get('/gallery/all', function (req, res, next) {
-	res.render('gallery/index', {
-		title: 'Gallery',
-		at_page: 'gallery',
-		sub_page: 'all',
 	});
 });
 
