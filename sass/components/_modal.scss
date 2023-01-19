@@ -74,6 +74,9 @@ body:has(.modal__item-details[open]) {
     &__img {
         border-radius: $default-border-radius;
         object-fit: contain;
+        @media (min-width: 1100px) {
+            max-height: calc(90vh - 11rem);
+        }
     }
     &__text-container {
         margin-inline-start: $size-8;

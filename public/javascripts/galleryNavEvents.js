@@ -143,7 +143,7 @@ const galleryEvents = (() => {
 		let divNode = document.createElement('div');
 		let nextTitleNode = document.createElement('h1');
 		nextTitleNode.innerText = nextTitleText;
-		nextTitleNode.classList.add('heading-3');
+		nextTitleNode.classList.add('heading-2');
 		let nextDiscriptionNode = document.createElement('h1');
 		nextDiscriptionNode.innerText = nextDiscriptionText;
 		nextDiscriptionNode.classList.add(
@@ -215,7 +215,7 @@ const galleryEvents = (() => {
 		nextContainerNode.appendChild(nextImgNode);
 		let divNode = document.createElement('div');
 		let nextTitleNode = document.createElement('h1');
-		nextTitleNode.classList.add('heading-3');
+		nextTitleNode.classList.add('heading-2');
 		nextTitleNode.innerText = nextTitleText;
 		let nextDiscriptionNode = document.createElement('h1');
 		nextDiscriptionNode.innerText = nextDiscriptionText;

@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const index_controller = require('../controllers/indexController');
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
 	console.log('index');
@@ -27,5 +29,7 @@ router.get('/contact', function (req, res, next) {
 		at_page: 'contact',
 	});
 });
+
+router.post('/contact', index_controller.contact_form_post);
 
 module.exports = router;
