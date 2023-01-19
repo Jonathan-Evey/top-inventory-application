@@ -33,8 +33,8 @@
   --primary-400: hsl(22deg, 31%, 44%);
   --primary-700: hsl(20deg, 23%, 23%);
   --primary-800: hsl(18deg, 23%, 10%);
-  --fs-900: 3.75rem;
-  --fs-800: 2.25rem;
+  --fs-900: 2.5rem;
+  --fs-800: 2rem;
   --fs-700: 1.75rem;
   --fs-600: 1.125rem;
   --fs-500: 1.125rem;
@@ -42,7 +42,7 @@
 }
 @media screen and (min-width: 45em) {
   :root {
-    --fs-900: 3.75rem;
+    --fs-900: 3.5rem;
     --fs-800: 2.75rem;
     --fs-700: 1.75rem;
     --fs-600: 1.3125rem;
@@ -89,6 +89,10 @@ body {
   background-color: var(--primary-100);
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   color: var(--accent-400);
 }
@@ -129,6 +133,15 @@ li {
   color: var(--neutral-100);
 }
 
+.btn__modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 25px;
+  height: 25px;
+  z-index: 5;
+}
+
 .card {
   display: grid;
   gap: 0.5rem;
@@ -151,17 +164,69 @@ li {
 }
 .card__item-preview {
   position: relative;
-  padding: 1rem;
-  background-color: var(--primary-200);
+  overflow: hidden;
+  transition: all ease-in-out 350ms;
+  transform: scale(1);
+  transform-origin: left top;
+  border-radius: 0.5rem;
+  height: fit-content;
+}
+.card__item-preview.exit {
+  transform: scale(0);
+}
+.card__item-preview.exit.none {
+  display: none;
+}
+.card__item-preview:hover p.details {
+  transform: translateY(1rem);
+}
+.card__item-preview button {
+  padding: 1rem 1rem 0 1rem;
+  background-color: var(--primary-300);
+  isolation: isolate;
+  border: none;
+  border-radius: 0.5rem;
+}
+.card__item-preview button:is(:focus) p.details {
+  transform: translateY(1rem);
+}
+.card__item-preview img {
+  pointer-events: none;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+.card__item-preview div {
+  position: relative;
+  overflow: hidden;
+  margin-block-end: 1rem;
+  pointer-events: none;
 }
 .card__item-preview p {
+  padding: 1rem;
+  margin-block-end: 1rem;
+  font-size: 2rem;
+  background-color: var(--primary-200);
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+@media (max-width: 450px) {
+  .card__item-preview p {
+    font-size: 1.5rem;
+  }
+}
+.card__item-preview p.details {
+  padding-block: 0.5rem;
+  pointer-events: none;
   position: absolute;
+  background-color: rgba(232, 225, 217, 0.95);
+  font-size: 1.25rem;
+  text-align: left;
+  transform: translateY(calc(100% + 1rem));
+  transition: all ease-in-out 250ms;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem 2rem;
-  font-size: 2rem;
-  background-color: rgba(232, 225, 217, 0.95);
+  z-index: 1;
 }
 
 .heading-1 {
@@ -194,13 +259,21 @@ li {
   line-height: 1;
 }
 
-.nav__main a, .nav__store a, .nav__gallery a {
+.nav__main .gallery-nav, .nav__store .gallery-nav, .nav__gallery .gallery-nav {
+  background-color: transparent;
+  border: none;
+  color: var(--accent-400);
+}
+.nav__main .gallery-nav:is(:hover, :focus), .nav__store .gallery-nav:is(:hover, :focus), .nav__gallery .gallery-nav:is(:hover, :focus) {
+  color: var(--accent-500);
+}
+.nav__main a, .nav__main .gallery-nav, .nav__store a, .nav__store .gallery-nav, .nav__gallery a, .nav__gallery .gallery-nav {
   position: relative;
   display: inline-block;
   padding: 1.5rem 1.5rem;
   text-decoration: none;
 }
-.nav__main a::before, .nav__store a::before, .nav__gallery a::before {
+.nav__main a::before, .nav__main .gallery-nav::before, .nav__store a::before, .nav__store .gallery-nav::before, .nav__gallery a::before, .nav__gallery .gallery-nav::before {
   content: "";
   position: absolute;
   background-color: var(--accent-500);
@@ -212,19 +285,20 @@ li {
   transform-origin: center;
   transition: all ease-in-out 250ms;
 }
-.nav__main a:is(:hover, :focus):not(.current)::before, .nav__store a:is(:hover, :focus):not(.current)::before, .nav__gallery a:is(:hover, :focus):not(.current)::before {
+.nav__main a:is(:hover, :focus):not(.current)::before, .nav__main .gallery-nav:is(:hover, :focus):not(.current)::before, .nav__store a:is(:hover, :focus):not(.current)::before, .nav__store .gallery-nav:is(:hover, :focus):not(.current)::before, .nav__gallery a:is(:hover, :focus):not(.current)::before, .nav__gallery .gallery-nav:is(:hover, :focus):not(.current)::before {
   transform: scaleX(1);
 }
-.nav__main a p, .nav__store a p, .nav__gallery a p {
+.nav__main a p, .nav__main .gallery-nav p, .nav__store a p, .nav__store .gallery-nav p, .nav__gallery a p, .nav__gallery .gallery-nav p {
+  pointer-events: none;
   font-family: "Source Sans Pro", sans-serif;
   font-size: var(--fs-600);
   font-weight: 700;
   text-transform: uppercase;
 }
-.nav__main a.current, .nav__store a.current, .nav__gallery a.current {
+.nav__main a.current, .nav__main .gallery-nav.current, .nav__store a.current, .nav__store .gallery-nav.current, .nav__gallery a.current, .nav__gallery .gallery-nav.current {
   color: var(--accent-500);
 }
-.nav__main a.current::after, .nav__store a.current::after, .nav__gallery a.current::after {
+.nav__main a.current::after, .nav__main .gallery-nav.current::after, .nav__store a.current::after, .nav__store .gallery-nav.current::after, .nav__gallery a.current::after, .nav__gallery .gallery-nav.current::after {
   content: "";
   position: absolute;
   background-color: var(--accent-500);
@@ -256,6 +330,58 @@ li {
 }
 .nav-bar__main.container {
   width: 100%;
+}
+
+body:has(.modal__item-details[open]) {
+  overflow: hidden;
+}
+
+.modal__item-details {
+  overflow: hidden;
+}
+.modal__item-details[open] {
+  position: fixed;
+  transform: translateY(75%) scale(0.25);
+  transition: all ease-in-out 250ms;
+  transform-origin: center top;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  padding: 2.5rem;
+  background-color: var(--primary-200);
+  border-radius: 0.5rem;
+}
+@media (max-width: 550px) {
+  .modal__item-details[open] {
+    padding: 1.5rem;
+  }
+}
+.modal__item-details[open].open {
+  transform: translateY(0) scale(1);
+}
+.modal__item-details::backdrop {
+  background-color: hsl(20deg, 23%, 23%);
+  opacity: 0.85;
+}
+.modal__item-details div {
+  transform: translateX(0);
+  transition: all ease-in-out 250ms;
+}
+.modal__item-details div.exit-next {
+  position: absolute;
+  top: 0;
+  transform: translateX(-125%);
+}
+.modal__item-details div.enter-next {
+  transform: translateX(125%);
+}
+.modal__item-details div.exit-previous {
+  position: absolute;
+  top: 0;
+  transform: translateX(125%);
+}
+.modal__item-details div.enter-previous {
+  transform: translateX(-125%);
 }
 
 main img:first-child {
@@ -1096,6 +1222,16 @@ main img:first-child {
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   padding-inline: 2.5rem;
+}
+@media (max-width: 1000px) {
+  .container__card-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .container__card-preview {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .fw-regular {

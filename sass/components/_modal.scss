@@ -1,0 +1,54 @@
+@use "../abstracts/" as *;
+
+body:has(.modal__item-details[open]) {
+    overflow: hidden;
+}
+
+.modal {
+    &__item-details {
+        overflow: hidden;
+        &[open] {
+            position: fixed;
+            transform: translateY(75%) scale(0.25); 
+            transition: all ease-in-out 250ms;
+            transform-origin: center top;
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            padding: 2.5rem;
+            background-color: $modal-background-default;
+            border-radius: $default-border-radius;
+            @media (max-width: 550px) {
+                padding: 1.5rem
+            }
+            &.open {
+                transform: translateY(0) scale(1); 
+            }
+        }
+        &::backdrop {
+            background-color: hsl(20 23% 23%);
+            opacity: 0.85;
+        }
+        & div {            
+            transform: translateX(0);
+            transition: all ease-in-out 250ms;
+            &.exit-next {
+                position: absolute;
+                top: 0;
+                transform: translateX(-125%);
+            }
+            &.enter-next {
+                transform: translateX(125%)
+            }
+            &.exit-previous {
+                position: absolute;
+                top: 0;
+                transform: translateX(125%);
+            }
+            &.enter-previous {
+                transform: translateX(-125%)
+            }
+        }
+    }
+}
+    

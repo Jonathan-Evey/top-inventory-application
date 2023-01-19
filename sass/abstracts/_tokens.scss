@@ -32,6 +32,8 @@ $link-color-hover: $color-text-interactive-hover;
 
 $nav-text-transform: uppercase;
 
+$default-border-radius: $size-2;
+
 $heading-font-family: $font-family-accent;
 $heading-color-default: $body-text-color;
 $heading-font-weight: $font-weight-bold;
@@ -84,3 +86,6 @@ $card-border-radius: $border-radius-2;
 $card-box-shadow: $box-shadow-1;
 
 $card-preview-title-font-size: $size-8;
+
+// modal 
+$modal-background-default: $color-primary-200;

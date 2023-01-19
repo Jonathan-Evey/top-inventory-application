@@ -8,8 +8,10 @@ block content
     
     section(class="container" data-type="wide")
       header 
-        h1(class="heading-1")= `${title} - ${sub_page}`
+        h1(class="heading-1" id="gallery-title")= `${title} - All`
       div(class="container__card-preview") 
-        +itemPreview("../images/preview-1.jpg", "Title - 1")
-        +itemPreview("../images/preview-2.jpg", "Title - 2")
-        +itemPreview("../images/preview-3.jpg", "Title - 3")
+        +itemPreview("../images/preview-1.jpg", "Title - 1", "water-color", "water-color-1", "water color of birds tehjkdh jkashd jkhas lkasjd lkaujs udasoid")
+        +itemPreview("../images/preview-2.jpg", "Title - 2", "water-color", "water-color-2", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate natus placeat, perspiciatis impedit magni repellat, soluta consectetur, reprehenderit tenetur blanditiis libero odio. Quis assumenda accusantium nulla hic! Quasi, quo repellendus.")
+        +itemPreview("../images/preview-3.jpg", "Title - 3", "sketches", "sketches-1", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit corrupti facere ipsa. Laborum repellat accusamus officia nihil. Adipisci praesentium voluptas unde assumenda asperiores tenetur? Rerum excepturi fugit corporis placeat architecto?")
+        
+  include itemModal

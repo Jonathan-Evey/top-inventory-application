@@ -9,6 +9,10 @@ body {
   background-color: $body-background-color;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   color: $link-color;
 }

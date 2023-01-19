@@ -32,3 +32,13 @@
   }
 }
 
+.btn {
+  &__modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 25px;
+    height: 25px;
+    z-index: 5;
+  }
+}
