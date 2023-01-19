@@ -10,12 +10,6 @@ main {
 
 .main {
     &__hero {
-        font-family: $font-family-accent;
-
-        & p {
-            font-size: $font-size-600;
-        }
-
         & img:not(:first-child) {
             max-width: 30vw;
             float: right;

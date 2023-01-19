@@ -2,7 +2,7 @@ extends ../layout
 include itemPreviewMixin
 
 block content
-  main(class="main__gallery")
+  main(class="main__gallery padding-block-end-12")
     img(src="", alt="", srcset="../images/gallery-img.jpg")
     include ./../components/nav/galleryNav
     
@@ -10,7 +10,7 @@ block content
       header 
         h1(class="heading-1" id="gallery-title")= `${title} - All`
       div(class="container__card-preview") 
-        +itemPreview("../images/preview-1.jpg", "Title - 1", "water-color", "water-color-1", "water color of birds tehjkdh jkashd jkhas lkasjd lkaujs udasoid")
+        +itemPreview("../images/preview-1.jpg", "Title - 1", "water-color", "water-color-1", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptates! Dolore perferendis tempore maiores, nesciunt iste voluptatum voluptates deserunt perspiciatis illo assumenda veritatis commodi rerum tenetur in odit a similique!")
         +itemPreview("../images/preview-2.jpg", "Title - 2", "water-color", "water-color-2", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate natus placeat, perspiciatis impedit magni repellat, soluta consectetur, reprehenderit tenetur blanditiis libero odio. Quis assumenda accusantium nulla hic! Quasi, quo repellendus.")
         +itemPreview("../images/preview-3.jpg", "Title - 3", "sketches", "sketches-1", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit corrupti facere ipsa. Laborum repellat accusamus officia nihil. Adipisci praesentium voluptas unde assumenda asperiores tenetur? Rerum excepturi fugit corporis placeat architecto?")
         

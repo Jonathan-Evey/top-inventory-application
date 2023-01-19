@@ -44,7 +44,7 @@
       border-radius: $default-border-radius;
       &:is(:hover, :focus) {
         outline: none;
-        border: solid 4px $color-accent-500;
+        border: solid 4px $color-primary-700;
 
         & p.details {
           transform: translateY(1rem);

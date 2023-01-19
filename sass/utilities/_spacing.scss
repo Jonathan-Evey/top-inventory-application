@@ -1,7 +1,13 @@
 @use "../abstracts" as *;
 
 .section {
-  padding-block: $section-padding-block;
+  padding-block-start: $section-padding-block;
+  &[data-type="last-section"] {
+    padding-block-end: $section-padding-block;
+  }
+  &[data-type="hero"] {
+    padding-block: $hero-padding-block;
+  }
 }
 
 .mx-auto {

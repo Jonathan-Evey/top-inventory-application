@@ -1,0 +1,36 @@
+@use '../abstracts/' as *;
+
+.main__contact {
+    & form {
+        & label {
+            color: $color-primary-700;
+            font-size: $label-font-size;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+
+        & input,
+        & textarea {
+            margin-block-end: $size-2;
+            background-color: $color-primary-200;
+            border-radius: $default-border-radius;
+            padding: $size-1 $size-2;
+            border: solid 2px $color-primary-700;
+            color: $color-primary-700;
+            font-size: $input-font-size;
+            font-weight: $font-weight-semi-bold;
+        }
+
+        & .flex-group {
+            width: 100%;
+            & .column {
+                flex-grow: 1;
+            }
+        }
+        & button {
+            width: fit-content;
+            margin-inline: auto;
+            padding-inline: 3rem;
+        }
+    }
+}

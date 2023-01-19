@@ -21,7 +21,7 @@ $box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 0.15);
 
 // body
 $body-font-family: $font-family-base;
-$body-font-size: $font-size-400;
+$body-font-size: $font-size-600;
 $body-line-height: 1.5;
 $body-font-weight: $font-weight-default;
 $body-text-color: $color-text-default;
@@ -51,8 +51,8 @@ $section-padding-block: clamp(5rem, 10vh, 6rem);
 
 $card-body-padding: $size-8;
 
-$container-min-margin-inline: $size-4;
-$container-max-width-narrow: 40rem;
+$container-min-margin-inline: $size-6;
+$container-max-width-narrow: 50rem;
 $container-max-width: 64rem;
 $container-max-width-wide: 75rem;
 
@@ -91,3 +91,7 @@ $card-preview-title-font-size: $size-8;
 // modal 
 $modal-background-default: $color-primary-200;
 $modal-description-font-size: $font-size-600;
+
+//form
+$label-font-size: $font-size-600;
+$input-font-size: $font-size-500;
