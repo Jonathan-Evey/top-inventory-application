@@ -35,10 +35,78 @@
 .btn {
   &__modal-close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    border: none;
+    background-color: transparent;
+    border-radius: $size-1;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 1rem;
     width: 25px;
     height: 25px;
     z-index: 5;
+    @media (max-width: 550px) {
+      top: 0.25rem;
+      right: 0.25rem;
+      padding: 1rem;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 2.5px;
+      right: 2.5px;
+      height: 4px;
+      border-radius: 250px;
+      background-color: $button-primary-background;
+      @media (max-width: 550px) {
+        left: 5px;
+        right: 5px;
+      }
+    }
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &::after {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+    &:is(:focus) {
+      outline: solid 4px $color-accent-500;
+      @media (max-width: 550px) {
+        outline: solid 2px $color-accent-500;
+      }
+      &::before,
+      &::after {
+        background-color: $color-accent-500;
+      }   
+    }
+    &:is(:hover) {
+      &::before,
+      &::after {
+        background-color: $color-accent-500;
+      }   
+    }
+  }
+  &__modal {
+    border: none;
+    border-radius: $size-1;
+    color: $button-primary-color;
+    background-color: $button-primary-background;
+    position: relative;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    font-family: $font-family-base;
+    font-size: $font-size-600;
+    font-weight: $font-weight-bold;
+    text-transform: $nav-text-transform;
+    margin-block-start: 2.5rem;
+      &:is(:hover, :focus) {
+        color: $button-primary-color-hover;
+        background-color: $button-primary-background-hover;
+      }
+      &:is(:focus) {
+        outline: solid 4px $color-accent-500;
+      }
   }
 }

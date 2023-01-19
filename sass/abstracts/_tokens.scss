@@ -2,7 +2,8 @@
 @use 'typography' as *;
 @use 'sizes' as *;
 
-$color-text-default: $color-primary-700;
+$color-text-default: $color-primary-800;
+$color-text-accent-default: $color-accent-400;
 $color-background-default: $color-primary-100;
 $color-text-interactive-default: $color-accent-400;
 $color-text-interactive-hover: $color-accent-500;
@@ -89,3 +90,4 @@ $card-preview-title-font-size: $size-8;
 
 // modal 
 $modal-background-default: $color-primary-200;
+$modal-description-font-size: $font-size-600;

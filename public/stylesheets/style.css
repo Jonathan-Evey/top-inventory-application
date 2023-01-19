@@ -44,7 +44,7 @@
   :root {
     --fs-900: 3.5rem;
     --fs-800: 2.75rem;
-    --fs-700: 1.75rem;
+    --fs-700: 2rem;
     --fs-600: 1.3125rem;
     --fs-500: 1.125rem;
     --fs-400: 1rem;
@@ -54,7 +54,7 @@
   :root {
     --fs-900: 3.75rem;
     --fs-800: 3rem;
-    --fs-700: 1.75rem;
+    --fs-700: 2.25rem;
     --fs-600: 1.3125rem;
     --fs-500: 1.125rem;
     --fs-400: 1rem;
@@ -84,7 +84,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: var(--fs-400);
-  color: var(--primary-700);
+  color: var(--primary-800);
   line-height: 1.5;
   background-color: var(--primary-100);
 }
@@ -135,11 +135,80 @@ li {
 
 .btn__modal-close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 1rem;
   width: 25px;
   height: 25px;
   z-index: 5;
+}
+@media (max-width: 550px) {
+  .btn__modal-close {
+    top: 0.25rem;
+    right: 0.25rem;
+    padding: 1rem;
+  }
+}
+.btn__modal-close::before, .btn__modal-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 2.5px;
+  right: 2.5px;
+  height: 4px;
+  border-radius: 250px;
+  background-color: var(--primary-700);
+}
+@media (max-width: 550px) {
+  .btn__modal-close::before, .btn__modal-close::after {
+    left: 5px;
+    right: 5px;
+  }
+}
+.btn__modal-close::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+.btn__modal-close::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+.btn__modal-close:is(:focus) {
+  outline: solid 4px var(--accent-500);
+}
+@media (max-width: 550px) {
+  .btn__modal-close:is(:focus) {
+    outline: solid 2px var(--accent-500);
+  }
+}
+.btn__modal-close:is(:focus)::before, .btn__modal-close:is(:focus)::after {
+  background-color: var(--accent-500);
+}
+.btn__modal-close:is(:hover)::before, .btn__modal-close:is(:hover)::after {
+  background-color: var(--accent-500);
+}
+.btn__modal {
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--neutral-100);
+  background-color: var(--primary-700);
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: var(--fs-600);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-block-start: 2.5rem;
+}
+.btn__modal:is(:hover, :focus) {
+  color: var(--neutral-100);
+  background-color: var(--primary-800);
+}
+.btn__modal:is(:focus) {
+  outline: solid 4px var(--accent-500);
 }
 
 .card {
@@ -184,10 +253,14 @@ li {
   padding: 1rem 1rem 0 1rem;
   background-color: var(--primary-300);
   isolation: isolate;
-  border: none;
+  border: solid 4px transparent;
   border-radius: 0.5rem;
 }
-.card__item-preview button:is(:focus) p.details {
+.card__item-preview button:is(:hover, :focus) {
+  outline: none;
+  border: solid 4px var(--accent-500);
+}
+.card__item-preview button:is(:hover, :focus) p.details {
   transform: translateY(1rem);
 }
 .card__item-preview img {
@@ -204,6 +277,7 @@ li {
 .card__item-preview p {
   padding: 1rem;
   margin-block-end: 1rem;
+  color: var(--accent-400);
   font-size: 2rem;
   background-color: var(--primary-200);
   border-radius: 0.5rem;
@@ -216,10 +290,11 @@ li {
 }
 .card__item-preview p.details {
   padding-block: 0.5rem;
+  color: var(--primary-800);
   pointer-events: none;
   position: absolute;
   background-color: rgba(232, 225, 217, 0.95);
-  font-size: 1.25rem;
+  font-size: var(--fs-500);
   text-align: left;
   transform: translateY(calc(100% + 1rem));
   transition: all ease-in-out 250ms;
@@ -337,7 +412,7 @@ body:has(.modal__item-details[open]) {
 }
 
 .modal__item-details {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .modal__item-details[open] {
   position: fixed;
@@ -350,6 +425,8 @@ body:has(.modal__item-details[open]) {
   padding: 2.5rem;
   background-color: var(--primary-200);
   border-radius: 0.5rem;
+  max-height: 90vh;
+  height: fit-content;
 }
 @media (max-width: 550px) {
   .modal__item-details[open] {
@@ -363,9 +440,17 @@ body:has(.modal__item-details[open]) {
   background-color: hsl(20deg, 23%, 23%);
   opacity: 0.85;
 }
+.modal__item-details div:not(:last-child) {
+  display: flex;
+}
+@media (max-width: 1100px) {
+  .modal__item-details div:not(:last-child) {
+    flex-direction: column;
+  }
+}
 .modal__item-details div {
   transform: translateX(0);
-  transition: all ease-in-out 250ms;
+  transition: all ease-in-out 450ms;
 }
 .modal__item-details div.exit-next {
   position: absolute;
@@ -382,6 +467,45 @@ body:has(.modal__item-details[open]) {
 }
 .modal__item-details div.enter-previous {
   transform: translateX(-125%);
+}
+.modal__item-details-description {
+  max-width: 40ch;
+  padding-inline: 1rem;
+  font-size: var(--fs-600);
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  color: var(--primary-800);
+}
+@media (max-width: 1100px) {
+  .modal__item-details-description {
+    max-width: 60ch;
+    padding-block: 1rem;
+  }
+}
+.modal__img {
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+.modal__text-container {
+  margin-inline-start: 2rem;
+}
+@media (max-width: 1100px) {
+  .modal__text-container {
+    margin-inline-start: 0;
+    margin-block-start: 2rem;
+  }
+}
+.modal__text-container h1 {
+  margin-block: 1rem 1.5rem;
+}
+@media (max-width: 1100px) {
+  .modal__text-container h1 {
+    margin-block: 0;
+  }
+}
+.modal__btn-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 main img:first-child {

@@ -143,8 +143,13 @@ const galleryEvents = (() => {
 		let divNode = document.createElement('div');
 		let nextTitleNode = document.createElement('h1');
 		nextTitleNode.innerText = nextTitleText;
+		nextTitleNode.classList.add('heading-3');
 		let nextDiscriptionNode = document.createElement('h1');
 		nextDiscriptionNode.innerText = nextDiscriptionText;
+		nextDiscriptionNode.classList.add(
+			'modal__item-details-description'
+		);
+		divNode.classList.add('modal__text-container');
 		divNode.appendChild(nextTitleNode);
 		divNode.appendChild(nextDiscriptionNode);
 		nextContainerNode.appendChild(divNode);
@@ -210,9 +215,14 @@ const galleryEvents = (() => {
 		nextContainerNode.appendChild(nextImgNode);
 		let divNode = document.createElement('div');
 		let nextTitleNode = document.createElement('h1');
+		nextTitleNode.classList.add('heading-3');
 		nextTitleNode.innerText = nextTitleText;
 		let nextDiscriptionNode = document.createElement('h1');
 		nextDiscriptionNode.innerText = nextDiscriptionText;
+		nextDiscriptionNode.classList.add(
+			'modal__item-details-description'
+		);
+		divNode.classList.add('modal__text-container');
 		divNode.appendChild(nextTitleNode);
 		divNode.appendChild(nextDiscriptionNode);
 		nextContainerNode.appendChild(divNode);
@@ -224,7 +234,7 @@ const galleryEvents = (() => {
 		}, 5);
 		setTimeout(() => {
 			modal.removeChild(currentContainer);
-		}, 250);
+		}, 450);
 	};
 	addEvents();
 })();

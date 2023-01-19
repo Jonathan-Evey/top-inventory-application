@@ -23,7 +23,6 @@
     transform-origin: left top;
     border-radius: $default-border-radius;
     height: fit-content;
-
     &.exit {
       transform: scale(0);
       &.none {
@@ -41,9 +40,12 @@
       padding: 1rem 1rem 0 1rem; 
       background-color: $color-primary-300;
       isolation: isolate;
-      border: none;
+      border: solid 4px transparent;
       border-radius: $default-border-radius;
-      &:is(:focus) {
+      &:is(:hover, :focus) {
+        outline: none;
+        border: solid 4px $color-accent-500;
+
         & p.details {
           transform: translateY(1rem);
         }
@@ -67,6 +69,7 @@
     & p {
       padding: 1rem;
       margin-block-end: $size-4;
+      color: $color-text-accent-default;
       font-size: $card-preview-title-font-size;
       background-color: $color-primary-200;
       border-radius: $default-border-radius;
@@ -78,10 +81,11 @@
 
     & p.details {
       padding-block: 0.5rem;
+      color: $color-text-default;
       pointer-events: none;
       position: absolute;
       background-color: $color-primary-200-95;
-      font-size: 1.25rem;
+      font-size: $font-size-500;
       text-align: left;
       transform: translateY(calc(100% + 1rem));
       transition: all ease-in-out 250ms;
