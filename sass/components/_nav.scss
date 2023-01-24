@@ -2,92 +2,93 @@
 @use "sass:color";
 
 .nav {
-    &__main,
-    &__store,
-    &__gallery {
-        & .gallery-nav {
-            background-color: transparent;
-            border: none;
-            color: $link-color;
-            &:is(:hover, :focus) {
-                color: $link-color-hover;
-            }
-        }
-        & a,
-        & .gallery-nav {
-            position: relative;
-            display: inline-block;
-            padding: 1.5rem 1.5rem;
-            text-decoration: none;
-            &::before {
-                content: "";
-                position: absolute;
-                background-color: $link-color-hover;
-                height: 4px;
-                bottom: 0;
-                left: 0.25rem;
-                right: 0.25rem;
-                transform: scaleX(0);
-                transform-origin: center;
-                transition: all ease-in-out 250ms;
-            }
+  &__main,
+  &__store,
+  &__gallery {
+    & .gallery-nav {
+      background-color: transparent;
+      border: none;
+      color: $link-color;
+      &:is(:hover, :focus) {
+        color: $link-color-hover;
+      }
+    }
+    & a,
+    & .gallery-nav {
+      position: relative;
+      display: inline-block;
+      padding: 1.5rem 1.5rem;
+      text-decoration: none;
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $link-color-hover;
+        height: 4px;
+        bottom: 0;
+        left: 0.25rem;
+        right: 0.25rem;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: all ease-in-out 250ms;
+      }
 
-            &:is(:hover, :focus):not(.current) {
-                &::before {   
-                    transform: scaleX(1);
-                }
-            }
+      &:is(:hover, :focus):not(.current) {
+        &::before {
+          transform: scaleX(1);
+        }
+      }
 
-            & p {
-                pointer-events: none;
-                font-family: $font-family-base;
-                font-size: $font-size-600;
-                font-weight: $font-weight-bold;
-                text-transform: $nav-text-transform;
-            }
-            
-        }
-        & a.current,
-        & .gallery-nav.current {
-            color: $link-color-hover;
-            &::after {
-                content: "";
-                position: absolute;
-                background-color: $link-color-hover;
-                height: 4px;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-        }
+      & p {
+        pointer-events: none;
+        font-family: $font-family-base;
+        font-size: $font-size-600;
+        font-weight: $font-weight-bold;
+        text-transform: $nav-text-transform;
+      }
     }
-    &__store {
-        display: flex;
-        justify-content: flex-end;
-        padding-inline-end: 1rem;
+    & a.current,
+    & .gallery-nav.current {
+      color: $link-color-hover;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $link-color-hover;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
     }
-    &__gallery {
-        & ul {
-            margin-inline: auto;
-        }
+  }
+  &__store {
+    display: flex;
+    justify-content: flex-end;
+    padding-inline-end: 1rem;
+  }
+  &__gallery {
+    & ul {
+      margin-inline: auto;
     }
+  }
 }
 
 .nav-bar {
-    &__main {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin-inline: auto;
-        display: flex;
-        justify-content: space-between;
-        background-color: $color-primary-200-95;
-        align-items: center;
-        z-index: 50;
-        &.container {
-            width: 100%
-        }
-        
+  &__main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-primary-200-95;
+    align-items: center;
+    z-index: 50;
+    &.container {
+      width: 100%;
     }
+    & p {
+      font-family: $font-family-logo;
+    }
+  }
 }

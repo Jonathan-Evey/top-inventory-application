@@ -1,8 +1,11 @@
 $-ff-sans: "Source Sans Pro", sans-serif;
 $-ff-serif: "Alegreya SC", serif;
+$-ff-yrsa: "Yrsa", sans-serif;
+$-ff-charm: "Charm", italic;
 
 $font-family-base: $-ff-sans;
-$font-family-accent: $-ff-serif;
+$font-family-accent: $-ff-yrsa;
+$font-family-logo: $-ff-charm;
 
 $font-sizes: (
   "small": (
@@ -44,4 +47,4 @@ $font-size-900: var(--fs-900);
 
 $font-weight-default: $-fw-400;
 $font-weight-semi-bold: $-fw-500;
-$font-weight-bold: $-fw-700
+$font-weight-bold: $-fw-700;

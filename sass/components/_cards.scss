@@ -12,7 +12,7 @@
   box-shadow: $card-box-shadow;
 
   &__heading {
-    @include heading($card-heading-font-size, $card-heading-color-default)
+    @include heading($card-heading-font-size, $card-heading-color-default);
   }
 
   &__item-preview {
@@ -29,7 +29,7 @@
         display: none;
       }
     }
-    
+
     &:hover {
       & p.details {
         transform: translateY(1rem);
@@ -37,7 +37,7 @@
     }
 
     & button {
-      padding: 1rem 1rem 0 1rem; 
+      padding: 1rem 1rem 0 1rem;
       background-color: $color-primary-300;
       isolation: isolate;
       border: solid 4px transparent;
@@ -56,7 +56,6 @@
       pointer-events: none;
       border-radius: $default-border-radius;
       object-fit: contain;
-      
     }
 
     & div {
@@ -75,12 +74,13 @@
       border-radius: $default-border-radius;
       pointer-events: none;
       @media (max-width: 450px) {
-        font-size:  $size-6;
+        font-size: $size-6;
       }
     }
 
     & p.details {
       padding-block: 0.5rem;
+      font-family: $font-family-base;
       color: $color-text-default;
       pointer-events: none;
       position: absolute;

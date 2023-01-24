@@ -26,3 +26,19 @@
   src: url("/fonts/sourcesanspro-bold.woff2") format("woff2"),
     url("/fonts/sourcesanspro-bold.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Charm";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/charm-regular-webfont.woff2") format("woff2"),
+    url("/fonts/charm-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Yrsa";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/yrsa-variablefont_wght-webfont.woff2") format("woff2"),
+    url("/fonts/yrsa-variablefont_wght-webfont.woff") format("woff");
+}

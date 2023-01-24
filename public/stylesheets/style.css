@@ -22,6 +22,18 @@
   font-display: swap;
   src: url("/fonts/sourcesanspro-bold.woff2") format("woff2"), url("/fonts/sourcesanspro-bold.woff") format("woff");
 }
+@font-face {
+  font-family: "Charm";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/charm-regular-webfont.woff2") format("woff2"), url("/fonts/charm-regular-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Yrsa";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/yrsa-variablefont_wght-webfont.woff2") format("woff2"), url("/fonts/yrsa-variablefont_wght-webfont.woff") format("woff");
+}
 :root {
   --neutral-100: hsl(0deg, 0%, 100%);
   --accent-300: hsl(8deg, 62%, 75%);
@@ -238,7 +250,7 @@ li {
 .card__heading {
   font-size: var(--fs-600);
   color: var(--primary-100);
-  font-family: "Alegreya SC", serif;
+  font-family: "Yrsa", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 700;
@@ -303,6 +315,7 @@ li {
 }
 .card__item-preview p.details {
   padding-block: 0.5rem;
+  font-family: "Source Sans Pro", sans-serif;
   color: var(--primary-800);
   pointer-events: none;
   position: absolute;
@@ -348,7 +361,7 @@ li {
 .heading-1 {
   font-size: var(--fs-900);
   color: var(--accent-400);
-  font-family: "Alegreya SC", serif;
+  font-family: "Yrsa", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 700;
@@ -358,7 +371,7 @@ li {
 .heading-2 {
   font-size: var(--fs-800);
   color: var(--accent-400);
-  font-family: "Alegreya SC", serif;
+  font-family: "Yrsa", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 700;
@@ -368,7 +381,7 @@ li {
 .heading-3 {
   font-size: var(--fs-700);
   color: var(--primary-400);
-  font-family: "Alegreya SC", serif;
+  font-family: "Yrsa", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 700;
@@ -446,6 +459,9 @@ li {
 }
 .nav-bar__main.container {
   width: 100%;
+}
+.nav-bar__main p {
+  font-family: "Charm", italic;
 }
 
 body:has(.modal__item-details[open]) {
@@ -568,7 +584,7 @@ main img:first-child {
   margin: 0.5rem;
 }
 .main__gallery {
-  font-family: "Alegreya SC", serif;
+  font-family: "Yrsa", sans-serif;
 }
 .main__gallery h1, .main__gallery section {
   padding-block-end: clamp(3rem, 10vh, 4rem);
@@ -1442,7 +1458,7 @@ main img:first-child {
 }
 
 .ff-accent {
-  font-family: "Alegreya SC", serif;
+  font-family: "Yrsa", sans-serif;
 }
 
 .flex-group {
