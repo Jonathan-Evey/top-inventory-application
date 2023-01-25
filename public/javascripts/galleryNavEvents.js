@@ -151,7 +151,7 @@ const galleryEvents = (() => {
 		let nextTitleNode = document.createElement('h1');
 		nextTitleNode.innerText = nextTitleText;
 		nextTitleNode.classList.add('heading-2');
-		let nextDiscriptionNode = document.createElement('h1');
+		let nextDiscriptionNode = document.createElement('p');
 		nextDiscriptionNode.innerText = nextDiscriptionText;
 		nextDiscriptionNode.classList.add(
 			'modal__item-details-description'
