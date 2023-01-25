@@ -34,6 +34,11 @@ const galleryEvents = (() => {
 				btn.classList.remove('current');
 			}
 		});
+		let galleryNav = document.querySelector('.nav__gallery');
+		galleryNav = galleryNav.children[0];
+		if (galleryNav.classList.contains('open')) {
+			galleryNav.classList.remove('open');
+		}
 		let title = document.getElementById('gallery-title');
 		let titleFormat = e.target.id.replace('-', ' ');
 		title.innerText = `Gallery - ${titleFormat}`;
