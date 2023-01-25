@@ -20,13 +20,15 @@ main {
     &__gallery {
         font-family: $font-family-accent;
         & .mask {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            display: none;
+            @media (max-width:650px) {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                display: none;
+            }
         }
         &:has(.nav__gallery ul.open) .mask {
             display: inline;

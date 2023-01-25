@@ -15,14 +15,18 @@ body:has(.modal__item-details[open]) {
             display: flex;
             margin: auto;
             flex-direction: column;
-            padding: 2.5rem;
+            padding: 2.5rem 6.5rem;
             background-color: $modal-background-default;
             border-radius: $default-border-radius;
-            max-height: 90vh;
+            max-height: 95vh;
             height: fit-content;
             border-color: $color-primary-800;
+            @media (max-width: 1100px) {
+                padding: 2.5rem;
+
+            }
             @media (max-width: 550px) {
-                padding: 1.5rem
+                padding: 1.5rem;
             }
             &.open {
                 transform: translateY(0) scale(1); 
@@ -43,7 +47,7 @@ body:has(.modal__item-details[open]) {
             transition: all ease-in-out 450ms;
             &.exit-next {
                 position: absolute;
-                top: 0;
+                top: 2.5rem;
                 transform: translateX(-125%);
             }
             &.enter-next {
@@ -51,7 +55,7 @@ body:has(.modal__item-details[open]) {
             }
             &.exit-previous {
                 position: absolute;
-                top: 0;
+                top: 2.5rem;
                 transform: translateX(125%);
             }
             &.enter-previous {
@@ -59,8 +63,8 @@ body:has(.modal__item-details[open]) {
             }
         }
         &-description {
-            max-width: 40ch;
-            padding-inline: $size-4;
+            max-width: 25ch;
+            padding-inline: $size-4 $size-2;
             font-size: $modal-description-font-size;
             font-family: $font-family-base;
             font-weight: $font-weight-semi-bold;
@@ -75,7 +79,7 @@ body:has(.modal__item-details[open]) {
         border-radius: $default-border-radius;
         object-fit: contain;
         @media (min-width: 1100px) {
-            max-height: calc(90vh - 11rem);
+            max-height: calc(95vh - 6rem);
         }
     }
     &__text-container {
@@ -93,8 +97,18 @@ body:has(.modal__item-details[open]) {
         }
     }
     &__btn-container {
+        position: absolute;
+        inset: 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+        pointer-events: none;
+        padding-inline: 1rem;
+        @media (max-width: 1100px) {
+            padding-block-start: 1rem;
+            position: relative;
+            justify-content: space-around;
+        }
     }
 }
 
