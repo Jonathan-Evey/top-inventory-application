@@ -35,8 +35,10 @@ const galleryEvents = (() => {
 			}
 		});
 		let galleryNav = document.querySelector('.nav__gallery');
-		galleryNav = galleryNav.children[0];
+		let galleryNavBtn = galleryNav.children[0];
+		galleryNav = galleryNav.children[1];
 		if (galleryNav.classList.contains('open')) {
+			galleryNavBtn.classList.remove('open');
 			galleryNav.classList.remove('open');
 		}
 		let title = document.getElementById('gallery-title');
