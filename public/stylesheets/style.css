@@ -104,6 +104,13 @@ body {
   line-height: 1.5;
   background-color: var(--primary-100);
 }
+body.no-scroll {
+  overflow-y: hidden;
+}
+
+img {
+  pointer-events: none;
+}
 
 button {
   cursor: pointer;
@@ -234,6 +241,33 @@ li {
 }
 .btn__modal {
   font-size: var(--fs-400);
+}
+.btn__nav-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: none;
+  width: 25px;
+  height: 25px;
+}
+@media (max-width: 650px) {
+  .btn__nav-toggle {
+    display: inline-block;
+  }
+}
+.btn__filter-toggle {
+  position: absolute;
+  top: -2px;
+  right: 1rem;
+  display: none;
+  width: 25px;
+  height: 25px;
+}
+@media (max-width: 650px) {
+  .btn__filter-toggle {
+    display: inline-block;
+    z-index: 46;
+  }
 }
 
 .card {
@@ -436,6 +470,49 @@ li {
   left: 0;
   right: 0;
 }
+@media (max-width: 650px) {
+  .nav__main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(213, 202, 188, 0.97);
+    height: 100vh;
+    text-align: center;
+    transform: translateX(100%);
+    transition: all 350ms ease-in-out;
+  }
+  .nav__main.open {
+    transform: translateX(0);
+    box-shadow: -0.25rem 0 1rem rgba(0, 0, 0, 0.15);
+  }
+  .nav__main.flex-group {
+    row-gap: 0;
+  }
+  .nav__main li {
+    width: 100%;
+  }
+  .nav__main li:first-child {
+    margin-block-start: 10rem;
+  }
+  .nav__main li:has(a.current) {
+    background-color: rgba(221, 213, 201, 0.97);
+  }
+  .nav__main a {
+    padding-block: 0.5rem;
+    padding-inline: 4rem;
+    width: 100%;
+  }
+  .nav__main a::before, .nav__main a.current::after {
+    left: 0;
+    right: 0;
+  }
+  .nav__main a p {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
 .nav__store {
   display: flex;
   justify-content: flex-end;
@@ -443,6 +520,46 @@ li {
 }
 .nav__gallery ul {
   margin-inline: auto;
+}
+@media (max-width: 650px) {
+  .nav__gallery {
+    position: relative;
+  }
+  .nav__gallery ul {
+    position: absolute;
+    padding-block-start: 1.5rem;
+    right: calc(0.5rem + 2px);
+    top: -0.5rem;
+    flex-direction: column;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: all 350ms ease-in-out;
+    align-items: center;
+    background-color: var(--primary-200);
+    text-align: center;
+    border: 4px solid var(--primary-700);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+    row-gap: 0;
+    z-index: 45;
+  }
+  .nav__gallery ul .gallery-nav::before {
+    background-color: transparent;
+    left: 0;
+    right: 0;
+  }
+  .nav__gallery ul button, .nav__gallery ul li {
+    width: 100%;
+  }
+  .nav__gallery ul button:has(button.current), .nav__gallery ul li:has(button.current) {
+    background-color: var(--primary-100);
+  }
+  .nav__gallery ul.open {
+    transform: scale(1);
+  }
+  .nav__gallery ul.open.active .gallery-nav::before {
+    background-color: var(--accent-500);
+  }
 }
 
 .nav-bar__main {
@@ -462,6 +579,11 @@ li {
 }
 .nav-bar__main p {
   font-family: "Charm", italic;
+}
+@media (max-width: 650px) {
+  .nav-bar__main p {
+    padding-block: 1rem;
+  }
 }
 
 body:has(.modal__item-details[open]) {
@@ -586,8 +708,29 @@ main img:first-child {
 .main__gallery {
   font-family: "Yrsa", sans-serif;
 }
+.main__gallery .mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.main__gallery:has(.nav__gallery ul.open) .mask {
+  display: inline;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.main__gallery section:nth-child(3) {
+  position: relative;
+}
 .main__gallery h1, .main__gallery section {
   padding-block-end: clamp(3rem, 10vh, 4rem);
+}
+@media (max-width: 650px) {
+  .main__gallery h1 {
+    padding-block: 2rem 2rem;
+  }
 }
 
 .even-columns {

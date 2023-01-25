@@ -120,4 +120,27 @@
   &__modal {
     font-size: $font-size-400;
   }
+  &__nav-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    width: 25px;
+    height: 25px;
+    @media (max-width: 650px) {
+      display: inline-block;
+    }
+  }
+  &__filter-toggle {
+    position: absolute;
+    top: -2px;
+    right: 1rem;
+    display: none;
+    width: 25px;
+    height: 25px;
+    @media (max-width: 650px) {
+      display: inline-block;
+      z-index: 46;
+    }
+  }
 }

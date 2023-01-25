@@ -60,6 +60,52 @@
       }
     }
   }
+  &__main {
+    @media (max-width: 650px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: center;
+      background-color: $color-mobile-main-nav;
+      height: 100vh;
+      text-align: center;
+      transform: translateX(100%);
+      transition: all 350ms ease-in-out;
+      &.open {
+        transform: translateX(0);
+        box-shadow: $box-shadow-left;
+      }
+      &.flex-group {
+        row-gap: 0;
+      }
+      & li {
+        width: 100%;
+        //border-bottom: 2px solid $link-color-hover;
+        &:first-child {
+          margin-block-start: 10rem;
+          //border-top: 2px solid $link-color-hover;
+        }
+        &:has(a.current) {
+          background-color: $color-mobile-main-nav-current;
+        }
+      }
+      & a {
+        padding-block: 0.5rem;
+        padding-inline: $nav-main-inline-padding;
+        width: 100%;
+        &::before, &.current::after {
+          left: 0;
+          right: 0;
+        }
+        & p {
+          width: 100%;
+          font-size: 1.5rem;
+        
+        }
+      } 
+    }
+  }
   &__store {
     display: flex;
     justify-content: flex-end;
@@ -68,6 +114,52 @@
   &__gallery {
     & ul {
       margin-inline: auto;
+    }
+    @media (max-width: 650px) {
+      position: relative;
+      & ul {
+        position: absolute;
+        padding-block-start: 1.5rem;
+        right: calc(0.5rem + 2px);
+        top: -0.5rem;
+        flex-direction: column;
+        transform-origin: top right;
+        transform: scale(0);
+        transition: all 350ms ease-in-out;
+        align-items: center;
+        background-color: $color-primary-200;
+        text-align: center;
+        border: 4px solid $color-primary-700;
+        border-radius: $default-border-radius;
+        box-shadow: $box-shadow-2;
+        row-gap: 0;
+        z-index: 45;
+        & .gallery-nav {
+          &::before {
+            background-color: transparent;
+            left: 0;
+            right: 0;
+          }
+        }
+        & button,
+        & li {
+          width: 100%;
+          &:has(button.current) {
+            background-color: $color-primary-100;
+          }
+        }
+        
+        &.open {
+          transform: scale(1);
+          &.active {
+            & .gallery-nav {
+             &::before {
+                background-color: $link-color-hover;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -89,6 +181,9 @@
     }
     & p {
       font-family: $font-family-logo;
+      @media (max-width: 650px) {
+        padding-block: 1rem;
+      }
     }
   }
 }

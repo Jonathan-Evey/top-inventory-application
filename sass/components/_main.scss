@@ -19,10 +19,31 @@ main {
     }
     &__gallery {
         font-family: $font-family-accent;
+        & .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            display: none;
+        }
+        &:has(.nav__gallery ul.open) .mask {
+            display: inline;
+            background-color: rgba(0,0,0, 0.2);
+        }
+        & section:nth-child(3) {
+            position: relative;
+        }
 
         & h1,
         & section {
             padding-block-end: clamp(3rem, 10vh, 4rem);
+        }
+        @media (max-width: 650px) {
+            & h1 {
+                padding-block: 2rem 2rem;  
+            }
         }
     }
 }

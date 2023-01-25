@@ -18,6 +18,8 @@ $border-radius-2: $size-4;
 $box-shadow-1: 0 $size-1 $size-4 rgb(0 0 0 / 0.05);
 $box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 0.15);
 
+$box-shadow-left: -$size-1 0 $size-4 rgb(0 0 0 / 0.15);
+
 
 // body
 $body-font-family: $font-family-base;
@@ -25,7 +27,7 @@ $body-font-size: $font-size-600;
 $body-line-height: 1.5;
 $body-font-weight: $font-weight-default;
 $body-text-color: $color-text-default;
-$body-background-color: $color-background-default;
+$body-background-color: $color-background-default; 
 
 // general
 $link-color: $color-text-interactive-default;
@@ -95,3 +97,6 @@ $modal-description-font-size: $font-size-600;
 //form
 $label-font-size: $font-size-600;
 $input-font-size: $font-size-500;
+
+//mobile 
+$nav-main-inline-padding: 4rem;

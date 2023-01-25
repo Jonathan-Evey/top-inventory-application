@@ -11,6 +11,13 @@ body {
   color: $body-text-color;
   line-height: $body-line-height;
   background-color: $body-background-color;
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+img {
+  pointer-events: none;
 }
 
 button {
