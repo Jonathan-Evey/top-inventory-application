@@ -1,13 +1,33 @@
 form(class="flex column container" id="form" data-type="narrow" action="/contact#form" method="POST")
     div(class="flex-group")
-        div(class="flex column")
-            label(for="name") Name
-            input(type="text", name="name", id="name" value=(undefined===formInfo ? "" : formInfo.name)) 
-        div(class="flex column")
-            label(for="email") Email
-            input(type="email", name="email", id="email" value=(undefined===formInfo ? "" : formInfo.email)) 
+        if (formErrors!==undefined && formErrors.name!==false)
+            div(class="flex column")
+                div(class="flex") 
+                    label(for="name") Name
+                    p #{formErrors.name.msg}
+                input(type="text", name="name", id="name" value=(undefined===formInfo ? "" : formInfo.name) required) 
+        else 
+            div(class="flex column")
+                label(for="name") Name
+                input(type="text", name="name", id="name" value=(undefined===formInfo ? "" : formInfo.name)) 
+        if (formErrors!==undefined && formErrors.email!==false)        
+            div(class="flex column")
+                div(class="flex")
+                    label(for="email") Email 
+                    p #{formErrors.email.msg}
+                input(type="email", name="email", id="email" value=(undefined===formInfo ? "" : formInfo.email) required) 
+        else 
+            div(class="flex column")
+                label(for="email") Email
+                input(type="email", name="email", id="email" value=(undefined===formInfo ? "" : formInfo.email)) 
     label(for="subject") Subject
     input(type="text", name="subject", id="subject" value=(undefined===formInfo ? "" : formInfo.subject)) 
-    label(for="message") message
-    textarea(type='textarea', name="message", id="message", cols="30", rows="10") #{undefined===formInfo ? "" : formInfo.message} 
+    if (formErrors!==undefined && formErrors.message!==false)
+        div(class="flex")
+            label(for="message") message
+            p #{formErrors.message.msg} 
+        textarea(type='textarea', name="message", id="message", cols="30", rows="10" required) #{undefined===formInfo ? "" : formInfo.message}
+    else 
+        label(for="message") message
+        textarea(type='textarea', name="message", id="message", cols="30", rows="10") #{undefined===formInfo ? "" : formInfo.message} 
     button(type="submit" class="btn__accent | margin-block-start-6") Submit
