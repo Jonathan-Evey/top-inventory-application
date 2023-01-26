@@ -12,6 +12,12 @@
       &:is(:hover, :focus) {
         color: $link-color-hover;
       }
+      &:focus {
+        outline-color: $link-color-hover;
+      }
+    }
+    & a:focus {
+      outline-color: $link-color-hover;
     }
     & a,
     & .gallery-nav {
@@ -81,10 +87,8 @@
       }
       & li {
         width: 100%;
-        //border-bottom: 2px solid $link-color-hover;
         &:first-child {
           margin-block-start: 10rem;
-          //border-top: 2px solid $link-color-hover;
         }
         &:has(a.current) {
           background-color: $color-mobile-main-nav-current;

@@ -92,10 +92,6 @@ svg {
   max-width: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
@@ -251,6 +247,12 @@ li {
   text-align: center;
   pointer-events: all;
   border-radius: 250px;
+}
+@media (max-width: 650px) {
+  .btn__modal {
+    height: 3rem;
+    width: 3rem;
+  }
 }
 .btn__modal:is(:hover, :focus) {
   color: var(--accent-500);
@@ -517,6 +519,19 @@ li {
   font-size: var(--fs-500);
   font-weight: 500;
 }
+.main__contact form input:invalid, .main__contact form textarea:invalid {
+  background-color: rgb(236, 197, 191);
+  border-color: rgb(165, 28, 7);
+}
+.main__contact form input:focus, .main__contact form textarea:focus {
+  border-color: var(--accent-500);
+  outline: solid 2px var(--accent-500);
+}
+.main__contact form p {
+  color: var(--primary-700);
+  font-weight: 500;
+  margin-left: 1ch;
+}
 .main__contact form .flex-group {
   width: 100%;
 }
@@ -566,6 +581,12 @@ li {
 }
 .nav__main .gallery-nav:is(:hover, :focus), .nav__store .gallery-nav:is(:hover, :focus), .nav__gallery .gallery-nav:is(:hover, :focus) {
   color: var(--accent-500);
+}
+.nav__main .gallery-nav:focus, .nav__store .gallery-nav:focus, .nav__gallery .gallery-nav:focus {
+  outline-color: var(--accent-500);
+}
+.nav__main a:focus, .nav__store a:focus, .nav__gallery a:focus {
+  outline-color: var(--accent-500);
 }
 .nav__main a, .nav__main .gallery-nav, .nav__store a, .nav__store .gallery-nav, .nav__gallery a, .nav__gallery .gallery-nav {
   position: relative;
@@ -845,6 +866,23 @@ body:has(.modal__item-details[open]) {
     position: relative;
     justify-content: space-around;
   }
+}
+.modal__contact {
+  position: fixed;
+  margin: auto;
+  transform: translateY(75%) scale(0.25);
+  transition: all ease-in-out 250ms;
+  padding: 2.5rem;
+  background-color: var(--primary-200);
+  border-radius: 0.5rem;
+  border-color: var(--primary-800);
+}
+.modal__contact.open {
+  transform: translateY(0) scale(1);
+}
+.modal__contact::backdrop {
+  background-color: hsl(20deg, 23%, 23%);
+  opacity: 0.85;
 }
 
 main img:first-child {

@@ -110,6 +110,26 @@ body:has(.modal__item-details[open]) {
             justify-content: space-around;
         }
     }
+
+
+    &__contact {
+        position: fixed;
+        margin: auto;
+        transform: translateY(75%) scale(0.25); 
+        transition: all ease-in-out 250ms;
+        padding: 2.5rem;
+        background-color: $modal-background-default;
+        border-radius: $default-border-radius;
+        border-color: $color-primary-800;
+        &.open {
+            transform: translateY(0) scale(1); 
+        }
+        
+        &::backdrop {
+            background-color: hsl(20 23% 23%);
+            opacity: 0.85;
+        }
+    }
 }
 
     

@@ -19,6 +19,20 @@
             color: $color-primary-700;
             font-size: $input-font-size;
             font-weight: $font-weight-semi-bold;
+            &:invalid {
+                background-color: $color-error-background-red;
+                border-color: $color-error-red;
+            }
+            &:focus {
+                border-color: $color-accent-500;
+                outline: solid 2px $color-accent-500;
+            }
+        }
+
+        & p {
+            color: $color-primary-700;
+            font-weight: $font-weight-semi-bold;
+            margin-left: 1ch;
         }
 
         & .flex-group {
