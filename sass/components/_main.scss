@@ -1,51 +1,54 @@
 @use "../abstracts/" as *;
 
 main {
-    & img:first-child {
-        max-height: 65vh;
-        width: 100%;
-        object-fit: cover;
-    }
+  & img:first-child {
+    max-height: 65vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 65%;
+    // object-position: 100% 40%; for main img on home
+    // object-position: 100% 65%; for gallery img and for contact img
+  }
 }
 
 .main {
-    &__hero {
-        & img:not(:first-child) {
-            max-width: 30vw;
-            float: right;
-            display: block;
-            margin: 0.5rem;
-        }
+  &__hero {
+    & img:not(:first-child) {
+      max-width: 30vw;
+      float: right;
+      display: block;
+      margin: 0.5rem;
     }
-    &__gallery {
-        font-family: $font-family-accent;
-        & .mask {
-            @media (max-width:650px) {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                width: 100%;
-                display: none;
-            }
-        }
-        &:has(.nav__gallery ul.open) .mask {
-            display: inline;
-            background-color: rgba(0,0,0, 0.2);
-        }
-        & section:nth-child(3) {
-            position: relative;
-        }
+  }
+  &__gallery {
+    font-family: $font-family-accent;
+    & .mask {
+      @media (max-width: 650px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        display: none;
+      }
+    }
+    &:has(.nav__gallery ul.open) .mask {
+      display: inline;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    & section:nth-child(3) {
+      position: relative;
+    }
 
-        & h1,
-        & section {
-            padding-block-end: clamp(3rem, 10vh, 4rem);
-        }
-        @media (max-width: 650px) {
-            & h1 {
-                padding-block: 2rem 2rem;  
-            }
-        }
+    & h1,
+    & section {
+      padding-block-end: clamp(3rem, 10vh, 4rem);
     }
+    @media (max-width: 650px) {
+      & h1 {
+        padding-block: 2rem 2rem;
+      }
+    }
+  }
 }
