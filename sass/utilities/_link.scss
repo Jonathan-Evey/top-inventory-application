@@ -1,0 +1,6 @@
+.classic-link {
+    color: #0000EE;
+    &:is(:hover, :active) {
+        color: #00009b;
+    }
+}

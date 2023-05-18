@@ -928,6 +928,43 @@ main img:first-child {
   }
 }
 
+.quote__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  margin-inline: 5rem;
+  background-color: rgba(232, 225, 217, 0.75);
+  border: 1px solid var(--primary-300);
+  border-radius: 15px;
+}
+.quote__container::before {
+  content: open-quote;
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  font-size: var(--fs-800);
+}
+@media (max-width: 475px) {
+  .quote__container {
+    margin-inline: 3rem;
+  }
+}
+.quote__text {
+  position: relative;
+  width: fit-content;
+}
+.quote__text::after {
+  content: close-quote;
+  position: absolute;
+  bottom: -1rem;
+  right: -1.5rem;
+  font-size: var(--fs-800);
+}
+.quote__author {
+  align-self: flex-end;
+}
+
 .even-columns {
   display: grid;
   gap: var(--grid-gap, 1.5rem);
@@ -1839,6 +1876,17 @@ main img:first-child {
   left: 0;
   right: 0;
   margin-inline: auto;
+}
+
+.right {
+  float: right;
+}
+
+.classic-link {
+  color: #0000EE;
+}
+.classic-link:is(:hover, :active) {
+  color: #00009b;
 }
 
 /*# sourceMappingURL=style.css.map */

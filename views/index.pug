@@ -1,4 +1,5 @@
 extends layout
+include .\components\mixin\quote
 
 block content
 
@@ -12,34 +13,38 @@ block content
 
       p(class="margin-block-end-8 padding-inline-6") My art is often inspired by the magnificent views of the ocean, landscapes and wildlife we experience on the Central Coast of California. But the everyday details of life are worthy of recording, also.
 
-      p(class="margin-block-12 padding-inline-10") “The artist has one function – to affirm and glorify life.” - W. Edward Brown
+      +quote("quote__container | margin-block-12 padding-inline-10", 'The artist has one function – to affirm and glorify life.', '- W. Edward Brown')
        
 
     section(class="section container")
       article
         header
           h3(class="heading-2 margin-block-end-8") Watercolor
-
-        p(class="margin-block-12 padding-inline-10") “Everything has its beauty, but not everyone sees it. “ - Andy Warhol
         
         p(class="margin-block-end-6 padding-inline-8") Watercolor is a wonderful medium to express yourself. You can be light and fresh or as detailed as you want. It all depends on how you want to depict the beauty you are seeing.
 
+        a(href="http://", target="_blank", rel="noopener noreferrer" class="classic-link right") More Watercolors &#8594
+
+        +quote("quote__container | margin-block-12 padding-inline-10", 'Everything has its beauty, but not everyone sees it.', '- Andy Warhol')
 
     section(class="section container" data-type="last-section")
       article
         header
           h4(class="heading-2 margin-block-end-8") Printmaking
-
-        p(class="margin-block-12 padding-inline-10") “To be an artist is to believe in life.” - Henry Moore
         
         p(class="margin-block-end-8 padding-inline-6") Printmaking is a fascinating artistic process. It involves transferring an image from one surface onto another surface, usually paper or fabric. I love the simplicity of relief printing with rubber blocks or linoleum. My intaglio prints are made by etching into metal or plastic plates, called dry-point. I love the line quality that intaglio allows me to produce.
 
+        a(href="http://", target="_blank", rel="noopener noreferrer" class="classic-link right") More Prints &#8594
+
+        +quote("quote__container | margin-block-12 padding-inline-10", 'To be an artist is to believe in life.', '- Henry Moore')
 
     section(class="section container" data-type="last-section")
       article
         header
           h4(class="heading-2 margin-block-end-8") Sketches
-
-        p(class="margin-block-12 padding-inline-10") “Painting is just another way of keeping a diary.” - Pablo Picasso
         
         p(class="margin-block-end-8 padding-inline-6") Sketching in various sketchbooks is an on going artistic practice. Some are designed for artistic journaling and some are to explore new sketching techniques. The pages often lead to stand alone art, used to make cards or paintings.
+
+        a(href="http://", target="_blank", rel="noopener noreferrer" class="classic-link right") More Sketches &#8594
+
+        +quote("quote__container | margin-block-12 padding-inline-10", 'Painting is just another way of keeping a diary.', '- Pablo Picasso') 
