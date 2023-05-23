@@ -4,47 +4,65 @@ include .\components\mixin\quote
 block content
 
   main(class="main__hero")
-    img(src="", alt="", srcset="../images/hero-test.jpg")
-    article(class="container section")
-      header
-        h1(class="heading-1 margin-block-end-10") Lynn Evey
-
-      p(class="margin-block-end-6 padding-inline-6") Observing the world around me and recording it in an artistic way has always been a part of my life. In the last ten years, I have returned to my love of watercolor, ink and printmaking to record my world.
-
-      p(class="margin-block-end-8 padding-inline-6") My art is often inspired by the magnificent views of the ocean, landscapes and wildlife we experience on the Central Coast of California. But the everyday details of life are worthy of recording, also.
-
-      +quote("quote__container | margin-block-12 padding-inline-10", 'The artist has one function – to affirm and glorify life.', '- W. Edward Brown')
-       
-
-    section(class="section container")
-      article
+    img(class="main__banner-img" src="", alt="", srcset="../images/hero-test.jpg")
+    article(class="section")
+      div(class="container")
         header
-          h3(class="heading-2 margin-block-end-8") Watercolor
-        
-        p(class="margin-block-end-6 padding-inline-8") Watercolor is a wonderful medium to express yourself. You can be light and fresh or as detailed as you want. It all depends on how you want to depict the beauty you are seeing.
+          h1(class="heading-1 margin-block-end-10") Lynn Evey
 
-        a(href="http://", target="_blank", rel="noopener noreferrer" class="classic-link right") More Watercolors &#8594
+        p(class="margin-block-end-6 padding-inline-6") Observing the world around me and recording it in an artistic way has always been a part of my life. In the last ten years, I have returned to my love of watercolor, ink and printmaking to record my world.
 
-        +quote("quote__container | margin-block-12 padding-inline-10", 'Everything has its beauty, but not everyone sees it.', '- Andy Warhol')
+        p(class="margin-block-end-8 padding-inline-6") My art is often inspired by the magnificent views of the ocean, landscapes and wildlife we experience on the Central Coast of California. But the everyday details of life are worthy of recording, also.
 
-    section(class="section container" data-type="last-section")
+      div(class="container__quote-img | even-columns padding-block-end-12")
+        img(src="/images/img-1.jpg", alt="")
+        +quote("quote__container", 'The artist has one function – to affirm and glorify life.', '- W. Edward Brown')
+
+        img(src="../images/img-1.jpg", alt="")
+
+    section(class="section")
       article
-        header
-          h4(class="heading-2 margin-block-end-8") Printmaking
-        
-        p(class="margin-block-end-8 padding-inline-6") Printmaking is a fascinating artistic process. It involves transferring an image from one surface onto another surface, usually paper or fabric. I love the simplicity of relief printing with rubber blocks or linoleum. My intaglio prints are made by etching into metal or plastic plates, called dry-point. I love the line quality that intaglio allows me to produce.
+        div(class="container")
+          header
+            h3(class="heading-2 margin-block-end-8") Watercolor
+          
+          p(class="margin-block-end-6 padding-inline-8") Watercolor is a wonderful medium to express yourself. You can be light and fresh or as detailed as you want. It all depends on how you want to depict the beauty you are seeing.
 
-        a(href="http://", target="_blank", rel="noopener noreferrer" class="classic-link right") More Prints &#8594
+        div(class="container__quote-img | even-columns")
+          img(src="/images/img-1.jpg", alt="")
+          img(src="../images/img-1.jpg", alt="")
+          +quote("quote__container", 'Everything has its beauty, but not everyone sees it.', '- Andy Warhol')
 
-        +quote("quote__container | margin-block-12 padding-inline-10", 'To be an artist is to believe in life.', '- Henry Moore')
+        a(href="/gallery-paintings", class="classic-link right margin-inline-end-12") More Watercolors &#8594
 
-    section(class="section container" data-type="last-section")
+    section(class="section margin-block-start-14")
       article
-        header
-          h4(class="heading-2 margin-block-end-8") Sketches
+        div(class="container")
+          header
+            h4(class="heading-2 margin-block-end-8") Printmaking
+          
+          p(class="margin-block-end-8 padding-inline-end-6") Printmaking is a fascinating artistic process. It involves transferring an image from one surface onto another surface, usually paper or fabric. I love the simplicity of relief printing with rubber blocks or linoleum. My intaglio prints are made by etching into metal or plastic plates, called dry-point. I love the line quality that intaglio allows me to produce.
+
+        div(class="container__quote-img | even-columns")
+          
+          +quote("quote__container", 'To be an artist is to believe in life.', '- Henry Moore')
+          img(src="/images/img-1.jpg", alt="")
+          img(src="/images/img-1.jpg", alt="")
+
+        a(href="/gallery-prints", class="classic-link right margin-inline-end-12") More Prints &#8594
+
+    section(class="section margin-block-start-14" data-type="last-section")
+      article
+        div(class="container")
+          header
+            h4(class="heading-2 margin-block-end-8") Sketches
         
-        p(class="margin-block-end-8 padding-inline-6") Sketching in various sketchbooks is an on going artistic practice. Some are designed for artistic journaling and some are to explore new sketching techniques. The pages often lead to stand alone art, used to make cards or paintings.
+          p(class="margin-block-end-8 padding-inline-6") Sketching in various sketchbooks is an on going artistic practice. Some are designed for artistic journaling and some are to explore new sketching techniques. The pages often lead to stand alone art, used to make cards or paintings.
 
-        a(href="http://", target="_blank", rel="noopener noreferrer" class="classic-link right") More Sketches &#8594
+        div(class="container__quote-img | even-columns")
+          img(src="/images/img-1.jpg", alt="")
+          
+          +quote("quote__container", 'Painting is just another way of keeping a diary.', '- Pablo Picasso') 
+          img(src="../images/img-1.jpg", alt="")
 
-        +quote("quote__container | margin-block-12 padding-inline-10", 'Painting is just another way of keeping a diary.', '- Pablo Picasso') 
+        a(href="/gallery-sketches", class="classic-link right margin-inline-end-12") More Sketches &#8594

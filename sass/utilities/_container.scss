@@ -32,3 +32,13 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.container {
+  &__quote-img {
+    margin-block: $size-12 $size-8 ;
+    margin-inline: $size-14;
+    @media (max-width: 1400px) {
+      margin-inline: $size-10;
+    }
+  }
+}

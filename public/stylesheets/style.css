@@ -885,18 +885,11 @@ body:has(.modal__item-details[open]) {
   opacity: 0.85;
 }
 
-main img:first-child {
+.main__banner-img {
   max-height: 65vh;
   width: 100%;
   object-fit: cover;
   object-position: 100% 65%;
-}
-
-.main__hero img:not(:first-child) {
-  max-width: 30vw;
-  float: right;
-  display: block;
-  margin: 0.5rem;
 }
 .main__gallery {
   font-family: "Yrsa", sans-serif;
@@ -932,18 +925,11 @@ main img:first-child {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 2rem 3rem;
-  margin-inline: 5rem;
   background-color: rgba(232, 225, 217, 0.75);
   border: 1px solid var(--primary-300);
   border-radius: 15px;
-}
-.quote__container::before {
-  content: open-quote;
-  position: absolute;
-  top: 0.5rem;
-  left: 1.5rem;
-  font-size: var(--fs-800);
 }
 @media (max-width: 475px) {
   .quote__container {
@@ -954,10 +940,17 @@ main img:first-child {
   position: relative;
   width: fit-content;
 }
+.quote__text::before {
+  content: open-quote;
+  position: absolute;
+  top: -1.5rem;
+  left: -2rem;
+  font-size: var(--fs-800);
+}
 .quote__text::after {
   content: close-quote;
   position: absolute;
-  bottom: -1rem;
+  bottom: -2.5rem;
   right: -1.5rem;
   font-size: var(--fs-800);
 }
@@ -1796,6 +1789,16 @@ main img:first-child {
   }
 }
 
+.container__quote-img {
+  margin-block: 5rem 2rem;
+  margin-inline: 8rem;
+}
+@media (max-width: 1400px) {
+  .container__quote-img {
+    margin-inline: 3rem;
+  }
+}
+
 .fw-regular {
   font-weight: 400;
 }
@@ -1884,6 +1887,7 @@ main img:first-child {
 
 .classic-link {
   color: #0000EE;
+  display: inline-block;
 }
 .classic-link:is(:hover, :active) {
   color: #00009b;

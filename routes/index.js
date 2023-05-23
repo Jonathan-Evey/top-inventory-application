@@ -13,6 +13,30 @@ router.get('/', function (req, res, next) {
 	});
 });
 
+router.get('/gallery-paintings', function (req, res, next) {
+	res.render('gallery/paintingsIndex', {
+		tabBar_title: 'Art by Lynn | Gallery',
+		title: 'Gallery',
+		at_page: 'gallery',
+	});
+});
+
+router.get('/gallery-prints', function (req, res, next) {
+	res.render('gallery/printsIndex', {
+		tabBar_title: 'Art by Lynn | Gallery',
+		title: 'Gallery',
+		at_page: 'gallery',
+	});
+});
+
+router.get('/gallery-sketches', function (req, res, next) {
+	res.render('gallery/sketchesIndex', {
+		tabBar_title: 'Art by Lynn | Gallery',
+		title: 'Gallery',
+		at_page: 'gallery',
+	});
+});
+
 router.get('/gallery', function (req, res, next) {
 	res.render('gallery/index', {
 		tabBar_title: 'Art by Lynn | Gallery',
