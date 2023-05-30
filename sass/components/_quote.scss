@@ -18,9 +18,9 @@
         //     left: $size-6;
         //     font-size: $font-size-800;
         // }
-        @media (max-width: 475px) {
-            margin-inline: $size-10;
-        }   
+        // @media (max-width: 475px) {
+        //     margin-inline: $size-10;
+        // }   
     }
     &__text {
         position: relative;
@@ -44,5 +44,6 @@
 
     &__author {
         align-self: flex-end;
+        text-align: right;
     }
 }
