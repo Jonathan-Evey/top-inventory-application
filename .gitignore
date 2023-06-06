@@ -5,3 +5,7 @@ pop.js
 mongodb.js
 
 /controllers/indexController.js
+
+Dockerfile
+fly.toml
+.dockerignore

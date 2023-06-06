@@ -447,6 +447,11 @@ li {
 .card__item-preview:hover p.details {
   transform: translateY(1rem);
 }
+@media (max-width: 950px) {
+  .card__item-preview:hover p.details {
+    transform: translateY(0);
+  }
+}
 .card__item-preview button {
   padding: 1rem 1rem 0 1rem;
   background-color: var(--primary-300);
@@ -476,7 +481,7 @@ li {
   padding: 1rem;
   margin-block-end: 1rem;
   color: var(--accent-400);
-  font-size: 2rem;
+  font-size: var(--fs-700);
   background-color: var(--primary-200);
   border-radius: 0.5rem;
   pointer-events: none;
@@ -501,6 +506,11 @@ li {
   left: 0;
   right: 0;
   z-index: 1;
+}
+@media (max-width: 950px) {
+  .card__item-preview p.details {
+    transform: translateY(1rem);
+  }
 }
 
 .main__contact form label {
@@ -927,13 +937,20 @@ body:has(.modal__item-details[open]) {
   flex-direction: column;
   justify-content: center;
   padding: 2rem 3rem;
+  margin-inline: 2.5rem;
   background-color: rgba(232, 225, 217, 0.75);
   border: 1px solid var(--primary-300);
   border-radius: 15px;
 }
+@media (max-width: 1050px) {
+  .quote__container {
+    margin-inline: 0;
+  }
+}
 .quote__text {
   position: relative;
   width: fit-content;
+  font-family: "Charm", italic;
 }
 .quote__text::before {
   content: open-quote;

@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www",
+    "start": "node ./bin/index.js",
+    "dev": "nodemon ./bin/index.js",
     "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart",
     "sass": "sass ./sass/main.scss ./public/stylesheets/style.css",
     "sasswatch": "sass --watch ./sass:public/stylesheets"
@@ -25,6 +25,7 @@
     "sass": "^1.57.1"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.2.11",
     "nodemon": "^2.0.20"
   }
 }
