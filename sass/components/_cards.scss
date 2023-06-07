@@ -23,6 +23,9 @@
     transform-origin: left top;
     border-radius: $default-border-radius;
     height: fit-content;
+    @media (max-width: 950px) {
+      margin-inline: auto;
+    }
     &.exit {
       transform: scale(0);
       &.none {
@@ -76,8 +79,8 @@
       background-color: $color-primary-200;
       border-radius: $default-border-radius;
       pointer-events: none;
-      @media (max-width: 450px) {
-        font-size: $size-6;
+      @media (max-width: 720px) {
+        font-size: $size-5;
       }
     }
 
@@ -97,6 +100,8 @@
       right: 0;
       z-index: 1;
       @media (max-width: 950px) {
+        padding-block: 0.125rem;
+        font-size: $font-size-400;
         transform: translateY(1rem);
       }
       // &.mobile {
