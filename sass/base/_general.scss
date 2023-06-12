@@ -1,5 +1,9 @@
 @use "../abstracts/" as *;
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: $body-font-family;
   font-weight: $body-font-weight;
@@ -7,7 +11,6 @@ body {
   color: $body-text-color;
   line-height: $body-line-height;
   background-color: $body-background-color;
-  overflow-x: hidden;
   &.no-scroll {
     @media (max-width: 650px) {
       overflow-y: hidden;

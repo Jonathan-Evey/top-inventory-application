@@ -27,19 +27,22 @@
         position: relative;
         width: fit-content;
         font-family: $font-family-logo;
+        font-weight: $font-size-900;
         &::before {
             content: open-quote;
             position: absolute;
             top: - $size-6;
             left: - $size-8;
-            font-size: $font-size-800;
+            font-size: $font-size-900;
+            font-weight: 700;
         }
         &::after {
             content: close-quote;
             position: absolute;
-            bottom: - $size-9;
+            bottom: - $size-10;
             right: - $size-6;
-            font-size: $font-size-800;
+            font-size: $font-size-900;
+            font-weight: 700;
         }
         
     }

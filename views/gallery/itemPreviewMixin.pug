@@ -3,9 +3,11 @@ mixin itemPreview(img, title, classValue, idValue, details)
         button(class="btn__item-preview")
             div
                 img(src=`${img}`, alt="", srcset="")
-                if details
-                    p(class="details") #{details}
-            P #{title}
-            //- p(class="details mobile") #{details}
+                //- if details
+                //-     p(class="details") #{details}
+
+            div
+                P #{title}
+                p(class="details mobile") #{details}
                 
                     
