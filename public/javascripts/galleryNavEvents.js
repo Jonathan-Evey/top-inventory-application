@@ -63,14 +63,21 @@ const galleryEvents = (() => {
 		});
 	};
 	const openModal = (e) => {
+		let currentGallerySelected =
+			document.getElementById('gallery-title');
+		currentGallerySelected = currentGallerySelected.innerText
+			.split(' ')[2]
+			.toLowerCase();
 		let modal = document.querySelector('.modal__item-details');
 		let modalImg = document.querySelector('.modal__img');
 		let modalImgSibling = modalImg.nextSibling;
 		let modalTitle = modalImgSibling.children[0];
 		let modalDetails = modalImgSibling.children[1];
 		let imgParent = e.target.children[0];
-		let imgTitle = imgParent.nextSibling.innerText.toString();
-		let imgDetails = imgParent.children[1].innerText.toString();
+		let imgTitle =
+			imgParent.nextSibling.children[0].innerText.toString();
+		let imgDetails =
+			imgParent.nextSibling.children[1].innerText.toString();
 		let closeModalBtn = document.querySelector(
 			'.btn__modal-close'
 		);
@@ -85,9 +92,11 @@ const galleryEvents = (() => {
 		modal.showModal();
 		modal.classList.add('open');
 		let nextBtn = document.getElementById('btn-next');
+		nextBtn.dataset.galleryView = currentGallerySelected;
 		nextBtn.removeEventListener('click', nextImg, false);
 		nextBtn.addEventListener('click', nextImg);
 		let previousBtn = document.getElementById('btn-previous');
+		previousBtn.dataset.galleryView = currentGallerySelected;
 		previousBtn.removeEventListener('click', previousImg, false);
 		previousBtn.addEventListener('click', previousImg);
 	};
@@ -119,10 +128,11 @@ const galleryEvents = (() => {
 			nextImgIndex = 0;
 			nextImg = currentGalleryImgs[0].children[0];
 			nextImg = nextImg.children[0];
-			nextTitleText = nextImg.nextSibling.innerText;
+			nextTitleText = nextImg.nextSibling.children[0].innerText;
 			nextTitleText = nextTitleText.toString();
-			if (nextImg.children[1]) {
-				nextDiscriptionText = nextImg.children[1].innerText;
+			if (nextImg.nextSibling.children[1]) {
+				nextDiscriptionText =
+					nextImg.nextSibling.children[1].innerText;
 				nextDiscriptionText = nextDiscriptionText.toString();
 			}
 			nextImg = nextImg.children[0];
@@ -131,10 +141,11 @@ const galleryEvents = (() => {
 			nextImg =
 				currentGalleryImgs[currentImgIndex + 1].children[0];
 			nextImg = nextImg.children[0];
-			nextTitleText = nextImg.nextSibling.innerText;
+			nextTitleText = nextImg.nextSibling.children[0].innerText;
 			nextTitleText = nextTitleText.toString();
-			if (nextImg.children[1]) {
-				nextDiscriptionText = nextImg.children[1].innerText;
+			if (nextImg.nextSibling.children[1]) {
+				nextDiscriptionText =
+					nextImg.nextSibling.children[1].innerText;
 				nextDiscriptionText = nextDiscriptionText.toString();
 			}
 			nextImg = nextImg.children[0];
@@ -192,10 +203,11 @@ const galleryEvents = (() => {
 			nextImg =
 				currentGalleryImgs[nodeArrey.length - 1].children[0];
 			nextImg = nextImg.children[0];
-			nextTitleText = nextImg.nextSibling.innerText;
+			nextTitleText = nextImg.nextSibling.children[0].innerText;
 			nextTitleText = nextTitleText.toString();
-			if (nextImg.children[1]) {
-				nextDiscriptionText = nextImg.children[1].innerText;
+			if (nextImg.nextSibling.children[1]) {
+				nextDiscriptionText =
+					nextImg.nextSibling.children[1].innerText;
 				nextDiscriptionText = nextDiscriptionText.toString();
 			}
 			nextImg = nextImg.children[0];
@@ -204,10 +216,11 @@ const galleryEvents = (() => {
 			nextImg =
 				currentGalleryImgs[currentImgIndex - 1].children[0];
 			nextImg = nextImg.children[0];
-			nextTitleText = nextImg.nextSibling.innerText;
+			nextTitleText = nextImg.nextSibling.children[0].innerText;
 			nextTitleText = nextTitleText.toString();
-			if (nextImg.children[1]) {
-				nextDiscriptionText = nextImg.children[1].innerText;
+			if (nextImg.nextSibling.children[1]) {
+				nextDiscriptionText =
+					nextImg.nextSibling.children[1].innerText;
 				nextDiscriptionText = nextDiscriptionText.toString();
 			}
 			nextImg = nextImg.children[0];
