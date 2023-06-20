@@ -9,3 +9,6 @@ Made using node.js, express with pug as the template language, and SASS.
 Future updates may include an admin page for the artist to update the site, and a backend for store item information using MongoDB.
 
 Design and concept made by me.
+
+issues that need work.
+Accessibility - large updates and review needed
