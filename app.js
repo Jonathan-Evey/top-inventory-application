@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
 const storeRouter = require('./routes/store');
 
@@ -36,9 +35,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/admin', adminRouter);
-app.use('/users', usersRouter);
-app.use('/store', storeRouter);
+
+// keep in, might upgrade site to have store or admin functions lated on
+// app.use('/admin', adminRouter);
+// app.use('/store', storeRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
