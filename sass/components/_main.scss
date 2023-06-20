@@ -40,4 +40,18 @@
       }
     }
   }
+  &__error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    & div {
+      max-width: 60ch;
+    }
+    & h1 {
+      font-size: $font-size-900;
+      font-weight: $font-weight-semi-bold;
+      color: $color-text-accent-default;
+    }
+  }
 }

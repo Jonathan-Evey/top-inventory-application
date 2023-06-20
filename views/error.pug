@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  main(class="main__error")
+    div
+      h1= error.status + " " + message
+      p This page my not exist, or was not found. You may return to the #[a(href="http://") home page here] or let us know the issue you encounter through the contact form here.
+      p Thank you.
