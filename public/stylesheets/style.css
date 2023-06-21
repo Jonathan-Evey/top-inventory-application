@@ -454,15 +454,15 @@ li {
   display: none;
 }
 .card__item-preview button {
-  padding: 1rem 1rem 0 1rem;
-  background-color: var(--primary-300);
+  padding: 0.5rem;
+  background-color: var(--primary-200);
   isolation: isolate;
-  border: solid 4px transparent;
+  border: solid 2px transparent;
   border-radius: 0.5rem;
 }
 .card__item-preview button:is(:hover, :focus) {
   outline: none;
-  border: solid 4px var(--primary-700);
+  border: solid 2px var(--primary-300);
 }
 @media (max-width: 625px) {
   .card__item-preview button {
@@ -482,7 +482,6 @@ li {
 .card__item-preview div:has(p) {
   padding: 0.25rem 1rem;
   margin-block-end: 1rem;
-  background-color: var(--primary-200);
   border-radius: 0.5rem;
   pointer-events: none;
   text-align: left;

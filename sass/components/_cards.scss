@@ -44,14 +44,14 @@
     // }
 
     & button {
-      padding: 1rem 1rem 0 1rem;
-      background-color: $color-primary-300;
+      padding: 0.5rem;
+      background-color: $color-primary-200;
       isolation: isolate;
-      border: solid 4px transparent;
+      border: solid 2px transparent;
       border-radius: $default-border-radius;
       &:is(:hover, :focus) {
         outline: none;
-        border: solid 4px $color-primary-700;
+        border: solid 2px $color-primary-300;
 
         // & p.details {
         //   transform: translateY(1rem);
@@ -77,7 +77,7 @@
     & div:has(p) {
       padding: 0.25rem 1rem;
       margin-block-end: $size-4;
-      background-color: $color-primary-200;
+      
       border-radius: $default-border-radius;
       pointer-events: none;
       text-align: left;
