@@ -44,7 +44,7 @@
   --primary-300: hsl(33deg, 23%, 69%);
   --primary-400: hsl(22deg, 31%, 44%);
   --primary-700: hsl(20deg, 23%, 23%);
-  --primary-800: hsl(18deg, 23%, 10%);
+  --primary-800: hsl(16deg, 22%, 10%);
   --fs-900: 2.5rem;
   --fs-800: 2rem;
   --fs-700: 1.75rem;
@@ -471,7 +471,6 @@ li {
 }
 .card__item-preview div:has(img) {
   overflow: hidden;
-  margin-block-end: 1rem;
   pointer-events: none;
 }
 .card__item-preview img {
@@ -480,21 +479,19 @@ li {
   object-fit: contain;
 }
 .card__item-preview div:has(p) {
-  padding: 0.25rem 1rem;
-  margin-block-end: 1rem;
+  padding: 0.25rem 1rem 0rem;
   border-radius: 0.5rem;
   pointer-events: none;
   text-align: left;
 }
 .card__item-preview p {
-  margin-block-end: 0.125rem;
   color: var(--accent-400);
   font-size: var(--fs-600);
   font-weight: 700;
 }
 .card__item-preview p.details {
   font-family: "Source Sans Pro", sans-serif;
-  color: var(--primary-800);
+  color: hsl(16deg, 22%, 42%);
   font-size: var(--fs-500);
   margin-inline-start: 0.5rem;
 }
@@ -1069,11 +1066,11 @@ body:has(.modal__item-details[open]) {
 }
 
 .clr-primary-800 {
-  color: hsl(18deg, 23%, 10%);
+  color: hsl(16deg, 22%, 10%);
 }
 
 .bg-primary-800 {
-  background-color: hsl(18deg, 23%, 10%);
+  background-color: hsl(16deg, 22%, 10%);
 }
 
 .fs-900 {

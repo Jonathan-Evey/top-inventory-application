@@ -64,7 +64,6 @@
 
     & div:has(img) {
       overflow: hidden;
-      margin-block-end: $size-4;
       pointer-events: none;
     }
 
@@ -75,16 +74,13 @@
     }
 
     & div:has(p) {
-      padding: 0.25rem 1rem;
-      margin-block-end: $size-4;
-      
+      padding: 0.25rem 1rem 0rem;
       border-radius: $default-border-radius;
       pointer-events: none;
       text-align: left;
     }
 
     & p {
-      margin-block-end: 0.125rem;
       color: $color-text-accent-default;
       font-size: $card-preview-title-font-size;
       font-weight: 700;
@@ -92,7 +88,7 @@
 
     & p.details {
       font-family: $font-family-base;
-      color: $color-text-default;
+      color: $color-primary-800-35;
       font-size: $font-size-500;
       margin-inline-start: 0.5rem;
       @media (max-width: 950px) {

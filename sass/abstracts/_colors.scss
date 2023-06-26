@@ -1,14 +1,14 @@
 // global color tokens
 $-clr-white: hsl(0 0% 100%);
 $-clr-orange-300: hsl(8 62% 75%);
-$-clr-orange-400: hsl(8 62% 55%);
+$-clr-orange-400: hsl(8, 62%, 55%);
 $-clr-orange-500: hsl(8 62% 35%);
 $-clr-brown-100: hsl(33 24% 92%);
 $-clr-brown-200: hsl(33 25% 88%);
 $-clr-brown-300: hsl(33 23% 69%);
 $-clr-brown-400: hsl(22 31% 44%);
 $-clr-brown-700: hsl(20 23% 23%);
-$-clr-brown-800: hsl(18 23% 10%);
+$-clr-brown-800: hsl(16, 22%, 10%);
 
 $colors: (
   "neutral": (
@@ -42,6 +42,7 @@ $color-primary-300: var(--primary-300);
 $color-primary-400: var(--primary-400);
 $color-primary-700: var(--primary-700);
 $color-primary-700-75: rgba(72, 54, 45, 0.75);
+$color-primary-800-35: hsl(16, 22%, 42%);
 $color-primary-800: var(--primary-800);
 
 $color-mobile-main-nav: rgba(213, 202, 188, 0.97);
