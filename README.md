@@ -12,3 +12,5 @@ Design and concept made by me.
 
 issues that need work.
 Accessibility - large updates and review needed
+back to top button in gallery
+close pop button functionality after submitting message
