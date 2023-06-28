@@ -67,10 +67,18 @@
       pointer-events: none;
     }
 
+    .img-placeholder {
+      position: absolute;
+      border-radius: $default-border-radius;
+      background-color: $color-primary-300;
+      opacity: 0.7;
+    }
+
     & img {
       pointer-events: none;
       border-radius: $default-border-radius;
       object-fit: contain;
+      height: fit-content;
     }
 
     & div:has(p) {

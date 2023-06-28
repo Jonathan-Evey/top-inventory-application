@@ -473,10 +473,17 @@ li {
   overflow: hidden;
   pointer-events: none;
 }
+.card__item-preview .img-placeholder {
+  position: absolute;
+  border-radius: 0.5rem;
+  background-color: var(--primary-300);
+  opacity: 0.7;
+}
 .card__item-preview img {
   pointer-events: none;
   border-radius: 0.5rem;
   object-fit: contain;
+  height: fit-content;
 }
 .card__item-preview div:has(p) {
   padding: 0.25rem 1rem 0rem;
@@ -1943,6 +1950,10 @@ body:has(.modal__item-details[open]) {
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-spacer, 1rem);
+}
+
+.relative {
+  position: relative;
 }
 
 .fixed {
