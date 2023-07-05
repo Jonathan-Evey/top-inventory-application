@@ -1,10 +1,11 @@
 extends ../layout
-include itemPreviewMixin
+include ./../components/mixin/itemPreview
 
 block content
-  main(class="main__gallery padding-block-end-12")
+  main(class="main__gallery padding-block-end-12" id="top")
     img(class="main__banner-img", src="", alt="", srcset="../images/gallery-test-two.jpg")
     include ./../components/nav/galleryNav
+    include ./../components/nav/backToTopBtn
     
     section(class="container" data-type="wide")
       //- button(class="btn__filter-toggle" id="btn-gallery-filter-toggle")

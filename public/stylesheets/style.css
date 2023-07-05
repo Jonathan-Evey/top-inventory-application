@@ -95,6 +95,11 @@ svg {
 html {
   overflow-x: hidden;
 }
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 body {
   font-family: "Source Sans Pro", sans-serif;
@@ -411,6 +416,59 @@ li {
     transform: rotate(-45deg) translateX(0);
     transition: all ease-in-out 250ms 250ms;
   }
+}
+.btn__back-to-top {
+  pointer-events: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  z-index: 100;
+  opacity: 0;
+  background-color: aqua;
+  transform: translateY(2rem);
+  transition: opacity 450ms ease-in-out, transform 550ms ease-in-out;
+  text-decoration: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  font-size: var(--fs-800);
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  color: var(--neutral-100);
+  background-color: var(--primary-700);
+  text-align: center;
+}
+.btn__back-to-top span {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  margin: auto 0;
+}
+@media (min-width: 1040px) {
+  .btn__back-to-top span {
+    transform: translateY(-0.25rem);
+  }
+}
+.btn__back-to-top:is(:hover, :focus) {
+  color: var(--neutral-100);
+  background-color: var(--primary-800);
+}
+.btn__back-to-top:is(:focus) {
+  outline: solid 4px var(--accent-500);
+}
+.btn__back-to-top.show {
+  pointer-events: all;
+  transform: translateY(0rem);
+  opacity: 1;
+}
+@media (max-width: 720px) {
+  .btn__back-to-top {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.btn__back-to-top:is(:hover, :focus) {
+  color: var(--accent-500);
 }
 
 .card {

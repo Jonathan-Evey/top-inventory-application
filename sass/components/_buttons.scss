@@ -289,5 +289,59 @@
       }
     }
   }
+  &__back-to-top {
+    pointer-events: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    z-index: 100;
+    opacity: 0;
+    background-color: aqua;
+    transform: translateY(2rem);
+    transition: opacity 450ms ease-in-out, transform 550ms ease-in-out;
+    text-decoration: none;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    font-size: $font-size-800;
+    font-family: $font-family-base;
+    font-weight: $font-weight-bold;
+    color: $button-primary-color;
+    background-color: $button-primary-background;
+    text-align: center;
+    & span {
+      display: inline-block;
+      line-height: normal;
+      vertical-align: middle;
+      margin: auto 0;
+      @media (min-width: 1040px) {
+        transform: translateY(-0.25rem);
+      }
+    }
+    
+    
+    &:is(:hover, :focus) {
+      color: $button-primary-color-hover;
+      background-color: $button-primary-background-hover;
+    }
+
+    &:is(:focus) {
+      outline: solid 4px $color-accent-500;
+    }
+
+    &.show {
+      pointer-events: all;
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+    
+    @media (max-width: 720px) {
+      height: 3rem;
+      width: 3rem;
+    }
+    &:is(:hover, :focus) {
+      color: $color-accent-500;
+    }
+  }
 }
 
