@@ -510,6 +510,9 @@ li {
 .card__item-preview.exit.none {
   display: none;
 }
+.card__item-preview video {
+  pointer-events: all;
+}
 .card__item-preview .video {
   display: flex;
   flex-direction: column;
