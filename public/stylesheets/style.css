@@ -510,6 +510,23 @@ li {
 .card__item-preview.exit.none {
   display: none;
 }
+.card__item-preview .video {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.card__item-preview .video p:first-child {
+  position: relative;
+  font-family: "Source Sans Pro", sans-serif;
+  color: hsl(16deg, 22%, 42%);
+  margin-block-end: 0.5rem;
+}
+.card__item-preview .video p:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-bottom: 2px var(--primary-300) solid;
+}
 .card__item-preview button {
   padding: 0.5rem;
   background-color: var(--primary-200);

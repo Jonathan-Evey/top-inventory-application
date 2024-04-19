@@ -5,7 +5,6 @@ const index_controller = require('../controllers/indexController');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-	console.log('index');
 	res.render('index', {
 		tabBar_title: 'Art by Lynn',
 		title: 'Art by Lynn',
@@ -14,26 +13,29 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/gallery-paintings', function (req, res, next) {
-	res.render('gallery/paintingsIndex', {
+	res.render('gallery/index', {
 		tabBar_title: 'Art by Lynn | Gallery',
 		title: 'Gallery',
 		at_page: 'gallery',
+		render_types: 'paintings',
 	});
 });
 
 router.get('/gallery-prints', function (req, res, next) {
-	res.render('gallery/printsIndex', {
+	res.render('gallery/index', {
 		tabBar_title: 'Art by Lynn | Gallery',
 		title: 'Gallery',
 		at_page: 'gallery',
+		render_types: 'prints',
 	});
 });
 
 router.get('/gallery-sketches', function (req, res, next) {
-	res.render('gallery/sketchesIndex', {
+	res.render('gallery/index', {
 		tabBar_title: 'Art by Lynn | Gallery',
 		title: 'Gallery',
 		at_page: 'gallery',
+		render_types: 'sketches',
 	});
 });
 
@@ -42,6 +44,7 @@ router.get('/gallery', function (req, res, next) {
 		tabBar_title: 'Art by Lynn | Gallery',
 		title: 'Gallery',
 		at_page: 'gallery',
+		render_types: 'all',
 	});
 });
 

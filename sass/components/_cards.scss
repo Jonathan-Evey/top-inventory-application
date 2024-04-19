@@ -34,6 +34,24 @@
       }
     }
 
+    & .video {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      & p:first-child {
+        position: relative;
+        font-family: $font-family-base;
+        color: $color-primary-800-35;
+        margin-block-end: 0.5rem;
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-bottom: 2px $color-primary-300 solid;
+        }
+      }
+    }
+
     // &:hover {
     //   & p.details {
     //     transform: translateY(1rem);
